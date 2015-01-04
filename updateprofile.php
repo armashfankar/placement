@@ -54,7 +54,7 @@ border-top: 1px solid #7C7A7A;
                     <tr>
                     <th></th>
                     <th>Student Details</th>
-                     <th>Update information</th>
+                     <th>Update Your Details</th>
                     </tr>
                 </thead>
                  <tbody>
