@@ -25,7 +25,7 @@
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="1">
 		<h1 id="logo" class="text-center">
-			<span class="title">
+			<span class="tagline">
             
             	<?php
 					$studentid = $_SESSION['s_id'];
@@ -50,10 +50,13 @@
 				$sql = "SELECT * from student where sid='{$studentid}'";
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
-				echo Welcome."&nbsp;".$row['username'];
+                $username=$row['username'];
+                ?>
+                <img class="img-circle" src="uploaded/<?php echo $username; ?> " height="160" width="160">
+                <?php
+                echo "<font color=white>".Welcome."&nbsp;".$username."</font>";
 				?>
-
-            </span>
+                </span>
 			
 		</h1>
 	</div>

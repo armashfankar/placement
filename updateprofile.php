@@ -48,6 +48,16 @@ border-top: 1px solid #7C7A7A;
 				?>
 <div class="container">
     <div id="respond">
+       <!----UPLOAD PHOTO BLOCK--->
+        <h3>Upload Your Photo Here.</h3>
+        <h7>Note:Please choose file less than 200Kbs</h7>
+        <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
+	           <input type='file' name='myfile'>
+	           <input type ='submit' name='Upload'>
+        </form>
+        
+       <!----UPLOAD PHOTO BLOCK ENDS--->
+        <!---UPDATE INFO BLOCK STARTS--->
         <div class="bs-example">
             <table class="table">
                 <thead>
@@ -116,11 +126,14 @@ border-top: 1px solid #7C7A7A;
         </div>
     </div>
 </div>
-
+        
+        <!---UPDATE INFO BLOCK ENDS--->
+                
+        <!---UPDATE PASSWORD BLOCK STARTS--->
 <div class="container">
 	<div id="respond">
         <h3 id="reply-title">Update Password</h3>
-            <form action="data.php" method="post" id="commentform">
+            <form action="updatepass.php" method="post" id="commentform">
 				<div class="form-group">
 				  <input type="password" class="form-control" id="inputpassword" placeholder="Enter your new password">
 				</div>
@@ -136,4 +149,6 @@ border-top: 1px solid #7C7A7A;
             </form>
 	</div>	<!-- /container -->
 </div>
+
+        <!---UPDATE INFO BLOCK ENDS--->
 <?php include "foot.html"; ?>
