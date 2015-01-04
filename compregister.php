@@ -5,13 +5,14 @@ include "head.html";
 <div class="container-fluid">
 	<div id="page-login" class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-			<div class="text-right">
-				<a href="index.php" class="txt-default">Already have an account?</a>
-			</div>
 			<div class="box">
 				<div class="box-content">
 					<div class="text-center">
-						<h3 class="page-header">Placement Register</h3>
+						<h3 class="page-header">Company Signup</h3>
+			<div class="text-right">
+				<a href="index.php" >Already have an account?</a>
+			</div>
+                        
                     <form name="studreg" action="comp_reg.php" method="post">   
 					</div>
 					<div class="form-group">

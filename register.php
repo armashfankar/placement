@@ -65,7 +65,7 @@ html,body {
 			<div class="box">
 				<div class="box-content">
 					<div class="text-center">
-						<h3 class="">Placement Register</h3>
+						<h3 class="">Student Signup</h3>
                         <div class="text-right">
 				<a href="index.php" >Already have an account?</a>
 			</div>
@@ -78,9 +78,14 @@ html,body {
 						<input type="text" required data-validation-required-message="Please enter your name." class="form-control" placeholder="Username" name="username" />
 					</div>
 					<div class="form-group">
-						<!--<label class="control-label">E-mail</label>-->
-						<input type="text" required data-validation-required-message="Please enter your name." class="form-control" placeholder="Email" name="email" />
+						<!--<label class="control-label">E-mail</label>
+						<input type="email" required data-validation-required-message="Please enter your name." class="form-control" placeholder="Email" name="email" />-->
 					</div>
+                        <div class="form-group">
+    <!--<label for="inputEmail" class="control-label">Email</label>-->
+    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+    <div class="help-block with-errors"></div>
+  </div>
 					<div class="form-group">
 						<!--<label class="control-label">Password</label>-->
 						<input type="password"  required data-validation-required-message="Please enter your name." class="form-control" placeholder="Password" name="password" />
@@ -107,8 +112,8 @@ html,body {
                         </div>
                         
                      <div class="col-md-6">   
-                    <a href="coregister.php" class="btn btn-small btn-block btn-primary">
-			        <span class="hidden-xs">Coordinator Signup</span>
+                    <a href="register.php" class="btn btn-small btn-block btn-primary">
+			        <span class="hidden-xs">Reset </span>
 		        </a>
                          </div>
                         </div>

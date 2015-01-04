@@ -1,6 +1,7 @@
 <?php
 include "head.html";
 ?>
+
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -65,9 +66,9 @@ html,body {
 					<div class="text-center">
 						<h3 class="page-header">Placement Login</h3>
 					</div>
-						<form name='login' method="post" action="home.php">
+						<form name='login' method="post" action="login.php">
 						    
-						<input type="text" class="form-control" placeholder="Email" name="username" />
+						<input type="text" class="form-control" placeholder="Username" name="username" />
 					
 					<div class="form-group">
 						<input type="password" placeholder="password" class="form-control" name="password" />
