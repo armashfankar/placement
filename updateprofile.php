@@ -49,12 +49,28 @@ border-top: 1px solid #7C7A7A;
 <div class="container">
     <div id="respond">
        <!----UPLOAD PHOTO BLOCK--->
-        <h3>Upload Your Photo Here.</h3>
-        <h7>Note:Please choose file less than 200Kbs</h7>
+ <div class="bs-example">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th> Upload Your Photo Here.</th>
+                    <th></th>
+                     <th></th>
+                    </tr>
+                </thead>
+                 <tbody>
         <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
-	           <input type='file' name='myfile'>
-	           <input type ='submit' name='Upload'>
-        </form>
+	
+        <tr class="success">
+                        <td><input type='file' name='myfile'></td>
+                    
+                  
+	          <td> <input type ='submit' name='Upload'> </td>
+		<td>Note:Please choose file less than 200Kbs</td>
+	</tr>
+
+        </form></tbody></table></div>
+
         
        <!----UPLOAD PHOTO BLOCK ENDS--->
         <!---UPDATE INFO BLOCK STARTS--->

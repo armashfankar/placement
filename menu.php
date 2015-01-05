@@ -73,18 +73,18 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="home.php">Home <i class="fa fa-home"></i></a></li>
 					<li><a href="news.php">News & Events <i class="fa fa-star-half-o "></i></a></li>
-					<li class="dropdown">
-					<!--	<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-							<li><a href="single.html">Blog Post</a></li>
-						</ul>
-					</li>-->
+					
 					<li><a href="updateprofile.php">Update Profile <i class="fa fa-gear "></i></a></li>
-                    <li><a href="#">Notification <i class="fa fa-bell-o "></i></a>
-						</li>
-					<li><a href="logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
+                    <li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Notification  <i class="fa fa-bell-o "></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Notification 1</a></li>
+							<li><a href="#">Notification 2</a></li>
+							<li><a href="#">Notification 3</a></li>
+						</ul>
+					</li>
+
+		<li><a href="logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
 				</ul>
 			
 			</div><!--/.nav-collapse -->			
