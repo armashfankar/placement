@@ -34,11 +34,11 @@ $type = $_FILES["myfile"] ["type"];
 echo "The type of file is ".$_FILES["myfile"] ["type"]."<br>";
 
 // To display Size
-$size = $_FILES["myfile"] ["size"];
+$size = $_FILES["myfile"] ["size"] ;
 echo "The size of file is".$_FILES["myfile"] ["size"]." bytes"."<br>";
 
 // To display temporary file where it is stored
-$temp = $_FILES["myfile"] ["tmp_name"];
+$temp = $_FILES["myfile"] ["tmp_name"] ;
 echo "It is stored at".$_FILES["myfile"] ["tmp_name"]."<br>";
 
 // To display errors if any

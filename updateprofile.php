@@ -49,6 +49,7 @@ border-top: 1px solid #7C7A7A;
 <div class="container">
     <div id="respond">
        <!----UPLOAD PHOTO BLOCK--->
+       
  <div class="bs-example">
             <table class="table">
                 <thead>
