@@ -12,9 +12,10 @@ $user="root";
 $pass="root";
 $conn=mysql_connect("$host","$user","$pass");
 mysql_select_db("placement",$conn);
-$name=$_POST[username];
+$username=$_POST[username];
 $password=$_POST[password];
-$sql="insert into student(username,email,password) values ('$_POST[username]','$_POST[email]','$_POST[password]')";
+$email=$_POST[email];
+$sql="insert into stud_login(username,email,password) values ('$_POST[username]','$_POST[email]','$_POST[password]')";
 
 
 if(!mysql_query($sql,$conn))
@@ -22,7 +23,7 @@ if(!mysql_query($sql,$conn))
 die ('error:'.mysql_error());
 }
  
-$mysql = "SELECT * FROM student WHERE username='$name' and password='$password' ";
+$mysql = "SELECT * FROM stud_login WHERE username='$username' and password='$password' ";
 
  $result = mysql_query($mysql) or die("cannot execute query");
 

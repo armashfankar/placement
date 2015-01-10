@@ -1,6 +1,39 @@
 <?php
 include "menu.php"; ?>
-<?php session_start(); ?>
+<?php session_start(); 
+
+	$studentid = $_SESSION['s_id'];
+
+
+				$host="localhost";
+				$user="root";
+				$pass="root";
+				$con = mysql_connect("$host","$user","$pass");
+	
+
+				if (!$con)
+				  {
+
+				echo "Error in DBConnect() = " . mssql_get_last_message();
+				  die('Could not connect: ' . mysql_error());
+
+				  }
+
+				mysql_select_db("placement", $con);
+	
+				$sql = "SELECT * from student_info where sid='{$studentid}'";
+                $result = mysql_query($sql) or die("cannot execute query");
+                $count = mysql_num_rows($result);
+                $username = $row['username'];
+                $email = $row['email'];
+                $fullname= $row['fullname'];
+                $address = $row['address'];
+                $dob = $row['dob'];  
+                $about = $row['about_you'];
+                $institute = $row['institute'];
+                $department = $row['department'];
+                $batch=$row['batch'];
+?>
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -14,119 +47,67 @@ border-top: 1px solid #7C7A7A;
 }
 </style>
 
-<h1 class="entry-title">Upcoming Companies</h1>
+<h1 class="entry-title">Your Profile</h1>
 <div class="container">
 	<div id="respond">
-
 <div class="bs-example">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Company</th>
-                <th>Requirments</th>
-                </tr>
-        </thead>
-        <tbody>
-        	<tr class="active">
-                <td>Company Name</td>
-                <td>Infosys Private ltd.</td>
-                </tr>
-            <tr class="success">
-                <td>Qualification</td>
-                <td>BE.COMPUTER , BE.ELECTRONICS & TELE.</td>
-             </tr>
-            <tr class="danger">
-                <td>Criteria</td>
-                <td>Minimum 60% Agg. Overall</td>
-             </tr>
-            
-            <tr class="info">
-                <td>Experience</td>
-                <td>2014-2015 Freshers</td>
-                
-            </tr> 
-            <tr class="warning">
-                <td>Job Location</td>
-                <td>Mumbai</td>
-                
-            </tr>
-            <tr class="danger">
-                <td>Salary</td>
-                <td>250000/-</td>
-               
-            </tr>
-            <tr class="info">
-                <td>Event Date</td>
-                <td>23/1/15</td>
-               
-            </tr>
-            <tr class="success">
-                <td>Website</td>
-                <td>www.infosystech.com</td>
-               
-            </tr>
-    
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-<hr>
-<div class="container">
-    <div id="respond">
-        <div class="bs-example">
             <table class="table">
                 <thead>
                     <tr>
-                    <th>Company</th>
-                    <th>Requirments</th>
+                    <th></th>
+                    <th>Student Details</th>
                     </tr>
                 </thead>
                  <tbody>
+                     <form action="updateprofile.php" method="post" id="commentform">
                     <tr class="active">
-                        <td>Company Name</td>
-                        <td>Infosys Private ltd.</td>
-                        </tr>
+                        <td>Full Name</td>
+                        <td><?php echo $fullname ?></td>
+                           
+                     </tr>
                     <tr class="success">
-                        <td>Qualification</td>
-                        <td>BE.COMPUTER , BE.ELECTRONICS & TELE.</td>
+                        <td>Address</td>
+                        <td><?php echo $address ?></td>
+                       
                      </tr>
                     <tr class="danger">
-                        <td>Criteria</td>
-                        <td>Minimum 60% Agg. Overall</td>
-                     </tr>
+                        <td>Mobile Number</td>
+                        <td><?php echo $mobile ?></td>
+                         
+                    </tr>
 
                     <tr class="info">
-                        <td>Experience</td>
-                        <td>2014-2015 Freshers</td>
-
-                    </tr> 
+                        <td>About You</td>
+                        <td><?php echo $about ?></td>
+                                         </tr> 
                     <tr class="warning">
-                        <td>Job Location</td>
-                        <td>Mumbai</td>
+                        <td>Institute Name</td>
+                        <td><?php echo $institute ?></td>
+                    
                     </tr>
                     <tr class="danger">
-                        <td>Salary</td>
-                        <td>250000/-</td>
-
+                        <td>Department</td>
+                        <td><?php echo $department ?></td>
+                                           </tr>
+                    <tr class="info">
+                        <td>Bacth</td>
+                        <td><?php echo $batch ?></td>
+                       
                     </tr>
                     <tr class="info">
-                        <td>Event Date</td>
-                        <td>23/1/15</td>
-
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-action">Edit Profile</button>
+                        </td>
                     </tr>
-                    <tr class="info">
-                        <td>Venue</td>
-                        <td>Infosys head office,link road, near </td>
-
-                    </tr>
-                     <tr class="success">
-                        <td>Website</td>
-                        <td>www.infosystech.com</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+        
+    </div>
+</div><br><br><br><br><Br>
 <?php include "foot.html"; ?>

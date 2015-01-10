@@ -66,24 +66,15 @@ html,body {
 					<div class="text-center">
 						<h3 class="page-header">Placement Login</h3>
 					</div>
-						<form name='login' method="post" action="login.php">
-						    
-						<input type="text" class="form-control" placeholder="Username" name="username" 
-                              required data-validation-required-message="Please enter your name."/>
+						<center><h3><Font Color="red">You Are Not Yet Approved TPO.</Font></h3>
+				        </center>
+                    <div class="text-center">
 					
-					<div class="form-group">
-						<input type="password" placeholder="password" class="form-control" name="password" required data-validation-required-message="Please enter your name." />
-					</div>
-					<div class="text-center">
-					
-						<button class="btn btn-primary" type="Submit">Sign in</a>
-					</div>
-                            <div class="text-right">
-				<a href="register.php" class="">Need an account?</a>
-			</div>
-			
-				   </form>
-				</div>
+						<a href="index.php" class="btn btn-small btn-block btn-primary">
+			        <span class="hidden-xs">Go Back</span>
+		        </a></div>
+                    
+                            </div>
 			
 			</div>
 		</div>

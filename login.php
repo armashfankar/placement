@@ -14,12 +14,12 @@ echo "Error in DBConnect() = " . mssql_get_last_message();
 
   }
 mysql_select_db("placement", $con);
-$name=$_POST['username'];
+$username=$_POST['username'];
 $password=$_POST['password'];
 
 
 
- $mysql = "SELECT * FROM student WHERE username='$name' and password='$password' ";
+ $mysql = "SELECT * FROM stud_login WHERE username='$username' and password='$password' and approval='yes'";
 
  $result = mysql_query($mysql) or die("cannot execute query");
 
@@ -37,6 +37,6 @@ $row = mysql_fetch_array($result);
 }
 
  else
-	header("location:login.php");
+    header("location:approval.php");
 
  ?>
