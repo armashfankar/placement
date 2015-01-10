@@ -31,9 +31,18 @@ include "menu.php"; ?>
                 $dob = $row['dob'];  
                 $about = $row['about_you'];
                 $institute = $row['institute'];
+                $university = $row['university'];
                 $department = $row['department'];
                 $batch=$row['batch'];
-?>
+                $deg7=$row['deg_sem7'];
+                $deg8=$row['deg_sem8'];
+                $degagg=$row['deg_agg'];
+                $diploma=$row['diploma_agg'];
+                $hsc=$row['hsc'];
+                $ssc=$row['ssc'];
+                $key=$row['key_skills'];
+                $project=$row['project_title'];
+?>  
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -56,6 +65,8 @@ border-top: 1px solid #7C7A7A;
                     <tr>
                     <th></th>
                     <th>Student Details</th>
+                    <th></th>
+                    
                     </tr>
                 </thead>
                  <tbody>
@@ -63,37 +74,83 @@ border-top: 1px solid #7C7A7A;
                     <tr class="active">
                         <td>Full Name</td>
                         <td><?php echo $fullname ?></td>
-                           
+                        <td></td>   
+                     </tr>
+                         <tr class="active">
+                        <td>DOB</td>
+                        <td><?php echo $dob ?></td>
+                         <td></td>  
                      </tr>
                     <tr class="success">
                         <td>Address</td>
                         <td><?php echo $address ?></td>
-                       
+                       <td></td>
                      </tr>
-                    <tr class="danger">
-                        <td>Mobile Number</td>
-                        <td><?php echo $mobile ?></td>
-                         
-                    </tr>
-
+                    
                     <tr class="info">
                         <td>About You</td>
                         <td><?php echo $about ?></td>
-                                         </tr> 
+                    <td></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>University Name</td>
+                        <td><?php echo $university ?></td>
+                    <td></td>
+                    </tr>
+                    
                     <tr class="warning">
                         <td>Institute Name</td>
                         <td><?php echo $institute ?></td>
-                    
+                    <td></td>
                     </tr>
                     <tr class="danger">
                         <td>Department</td>
                         <td><?php echo $department ?></td>
-                                           </tr>
+                        <td></td>                   </tr>
                     <tr class="info">
-                        <td>Bacth</td>
+                        <td>Batch</td>
                         <td><?php echo $batch ?></td>
-                       
+                       <td></td>
                     </tr>
+                         <tr class="success">
+                        <td>Degree Sem 7 %</td>
+                        <td><?php echo $deg7 ?></td>
+                             <td></td>
+                        </tr>
+                        <tr class="info">
+                        <td>Degree Sem 8 %</td>
+                        <td><?php echo $deg8 ?></td>
+                            <td></td>
+                        </tr>
+                         <tr class="warning">
+                        <td>Degree Aggrigate %</td>
+                        <td><?php echo $degagg ?></td>
+                        </tr>
+                         <tr class="danger">
+                        <td>Diploma Aggrigate %</td>
+                        <td><?php echo $diploma ?></td>
+                             <td></td>
+                        </tr>
+                          <tr class="success">
+                        <td>HSC %</td>
+                        <td><?php echo $hsc ?></td>
+                              <td></td>
+                        </tr>
+                          <tr class="danger">
+                        <td>SSC %</td>
+                        <td><?php echo $ssc ?></td>
+                              <td></td>
+                        </tr>
+                          <tr class="warning">
+                        <td>Key Skills</td>
+                        <td><?php echo $key ?></td>
+                              <td></td>
+                        </tr>
+                         <tr class="success">
+                        <td>Project Title</td>
+                        <td><?php echo $project ?></td>
+                             <td></td>
+                        </tr>
                     <tr class="info">
                         <td></td>
                         <td></td>

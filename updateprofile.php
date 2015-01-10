@@ -33,17 +33,26 @@ border-top: 1px solid #7C7A7A;
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from student where sid='{$studentid}'";
+				$sql = "SELECT * from student_info where sid='{$studentid}'";
                 $result = mysql_query($sql) or die("cannot execute query");
                 $count = mysql_num_rows($result);
-                $fullname = $row['fullname'];
+                $fullname= $row['fullname'];
                 $address = $row['address'];
-                $mobile = $row['mobile'];
+                $dob = $row['dob'];  
+                $gender = $row['gender'];      
                 $about = $row['about_you'];
                 $institute = $row['institute'];
+                $university = $row['university'];
                 $department = $row['department'];
                 $batch=$row['batch'];
-
+                $deg7=$row['deg_sem7'];
+                $deg8=$row['deg_sem8'];
+                $degagg=$row['deg_agg'];
+                $diploma=$row['diploma_agg'];
+                $hsc=$row['hsc'];
+                $ssc=$row['ssc'];
+                $key=$row['key_skills'];
+                $project=$row['project_title'];
 
 				?>
 <div class="container">
@@ -85,13 +94,14 @@ border-top: 1px solid #7C7A7A;
                     </tr>
                 </thead>
                  <tbody>
-                     <form action="updateinfo.php" method="post" id="commentform">
+                     <form action="updatestudent.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Full Name</td>
                         <td><?php echo $fullname ?></td>
-                        <td><input type="text" class="form-control" name="fullname" id="inputName"                  placeholder="Update Name">
+                        <td><input type="text" class="form-control" name="fullname" id="inputName"                                     placeholder="Update Name">
                         </td>   
                      </tr>
+                    
                     <tr class="success">
                         <td>Address</td>
                         <td><?php echo $address ?></td>
@@ -100,9 +110,9 @@ border-top: 1px solid #7C7A7A;
 
                      </tr>
                     <tr class="danger">
-                        <td>Mobile Number</td>
-                        <td><?php echo $mobile ?></td>
-                        <td><input type="text" class="form-control" id="inputmobile"                  placeholder="Update Mobile Number" name="mobile">
+                        <td>Gender</td>
+                        <td><?php echo $gender ?></td>
+                        <td><input type="text" class="form-control" id="inputmobile"                  placeholder="Update Mobile Number" name="gender">
                         </td>  
                     </tr>
 
@@ -125,7 +135,7 @@ border-top: 1px solid #7C7A7A;
                         </td>
                     </tr>
                     <tr class="info">
-                        <td>Bacth</td>
+                        <td>Batch</td>
                         <td><?php echo $batch ?></td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update batch" name="batch">
                         </td>
@@ -137,8 +147,8 @@ border-top: 1px solid #7C7A7A;
                             <button type="submit" class="btn btn-action">Submit</button>
                         </td>
                     </tr>
-                    
-                </tbody>
+                    </form>
+                </tbody></div></div></div>
             </table>
         </div>
     </div>

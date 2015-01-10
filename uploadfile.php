@@ -19,7 +19,7 @@ $studentid = $_SESSION['s_id'];
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from student where sid='{$studentid}'";
+				$sql = "SELECT * from student_info where sid='{$studentid}'";
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
                 $name=$row['username'];
