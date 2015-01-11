@@ -66,7 +66,7 @@ html,body {
 					<div class="text-center">
 						<h3 class="page-header">Placement Login</h3>
 					</div>
-						<center><h3><Font Color="red">You Are Not Yet Approved TPO.</Font></h3>
+						<center><h3><Font Color="red">You Are Not Yet Approved By TPO.</Font></h3>
 				        </center>
                     <div class="text-center">
 					

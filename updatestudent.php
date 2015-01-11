@@ -23,11 +23,13 @@ session_start();
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
 				$username = $row['username'];
-                $sid= $studentid;      
+                $fullname1 = $row['fullname'];
+                $sid= $studentid;   
+            
                 $fullname=$_POST['fullname'];
-                $dob=$_POST['dob'];
-                $gender=$_POST['gender'];
                 $address=$_POST['address'];
+                $gender=$_POST['gender'];
+                $dob=$_POST['dob'];
                 $about_you=$_POST['about_you'];
                 $institute=$_POST['institute'];
                 $university=$_POST['university'];
@@ -42,9 +44,10 @@ session_start();
                 $key_skills=$_POST['key_skills'];
                 $project_title=$_POST['project_title'];
 
-
-$sql1="UPDATE student_info SET fullname='$fullname',dob='$dob',gender='$gender',address='$address'
-WHERE sid=$sid"; 
+$sql1="UPDATE student_info SET fullname='$fullname',dob='$dob',gender='$gender',address='$address',about_you='$about_you',institute='$institute',university='$university',department='$department',batch='$batch',deg_sem7='$deg_sem7',
+deg_sem8='$deg_sem8',deg_agg='$deg_agg',diploma_agg='$diploma_agg',hsc='$hsc',ssc='$ssc',
+key_skills='$key_skills',project_title='$project_title'
+WHERE sid='$sid'"; 
 
 
 if (!mysql_query($sql1,$con))
