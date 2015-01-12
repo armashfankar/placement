@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2015 at 04:19 PM
+-- Generation Time: Jan 12, 2015 at 09:28 PM
 -- Server version: 5.5.38-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.3
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `placement` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `placement`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comp_login`
+--
+
+CREATE TABLE IF NOT EXISTS `comp_login` (
+  `cid` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `newsid` int(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `venue` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -57,7 +86,8 @@ CREATE TABLE IF NOT EXISTS `student_info` (
 
 INSERT INTO `student_info` (`sid`, `username`, `fullname`, `dob`, `gender`, `address`, `about_you`, `institute`, `university`, `department`, `batch`, `deg_sem7`, `deg_sem8`, `deg_agg`, `diploma_agg`, `hsc`, `ssc`, `key_skills`, `project_title`, `approval`) VALUES
 (5, 'nabeel', 'hawa nabeel', '01/01/1993', 'male', 'B/02,RAHAT APT.BEHIND SHAHEEN HOSPITAL,KAUSA,MUMBRA', 'TRAVELLING', 'KALSEKAR TECHNICAL CAMPUS', 'MUMBAI UNIVERSITY', 'COMPUTER ENGINEERING', 'JOB SERACH ENGINE', 68, 77, 67, 68, 0, 77, 'PHP,MYSQL,HTML', 'JOB SERACH ENGINE', ''),
-(8, 'armash', 'Armash Aslam Fankar', '14/09/1992', 'male', 'B/02,RAHAT APT.BEHIND SHAHEEN HOSPITAL,KAUSA,MUMBRA', 'TRAVELLING', 'KALSEKAR TECHNICAL CAMPUS', 'MUMBAI UNIVERSITY', 'COMPUTER ENGINEERING', '2014-2015', 60, 59, 63, 67, 0, 77, 'PHP,MYSQL,HTML', 'JOB SERACH ENGINE', '');
+(8, 'armash', 'Armash Aslam Fankar', '14/09/1992', 'male', 'B/02,RAHAT APT.BEHIND SHAHEEN HOSPITAL,KAUSA,MUMBRA', 'TRAVELLING', 'KALSEKAR TECHNICAL CAMPUS', 'MUMBAI UNIVERSITY', 'COMPUTER ENGINEERING', '2014-2015', 60, 59, 63, 67, 0, 77, 'PHP,MYSQL,HTML', 'JOB SERACH ENGINE', ''),
+(9, 'saima', 'saima', '14/09/1992', 'female', 'wadala', 'TRAVELLING', 'KALSEKAR TECHNICAL CAMPUS', 'MUMBAI UNIVERSITY', 'COMPUTER ENGINEERING', '2014-2015', 78, 87, 78, 77, 87, 78, 'PHP,MYSQL,HTML', 'JOB SERACH ENGINE', '');
 
 -- --------------------------------------------------------
 
@@ -72,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `stud_login` (
   `password` varchar(255) DEFAULT NULL,
   `approval` varchar(255) NOT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `stud_login`
@@ -80,7 +110,8 @@ CREATE TABLE IF NOT EXISTS `stud_login` (
 
 INSERT INTO `stud_login` (`sid`, `username`, `email`, `password`, `approval`) VALUES
 (5, 'nabeel', 'talktoarmash@gmail.com', 'nn', 'yes'),
-(8, 'armash', 'talktoarmash@gmail.com', '123', 'yes');
+(8, 'armash', 'talktoarmash@gmail.com', '123', 'yes'),
+(9, 'saima', 'hajisaima9@gmail.com', 'sam', 'yes');
 
 -- --------------------------------------------------------
 
