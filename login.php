@@ -17,38 +17,46 @@ mysql_select_db("placement", $con);
 $username=$_POST['username'];
 $password=$_POST['password'];
 
-/*
+/* multilogin code*/
  $mysql = "SELECT * FROM stud_login WHERE username='$username' and password='$password' ";
-	 $mysql2 = "SELECT * FROM tpo WHERE username='$username' and password='$password' ";
+$mysql2 = "SELECT * FROM tpo WHERE username='$username' and password='$password' ";
+//$mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password='$password' ";
 
  $result = mysql_query($mysql) or die("cannot execute query");
 $result2 = mysql_query($mysql2) or die("cannot execute query");
+//$result3 = mysql_query($mysql3) or die("cannot execute query");
 
  $count = mysql_num_rows($result);
  $count2 = mysql_num_rows($result2);
-$row = mysql_fetch_array($result);
-$row = mysql_fetch_array($result2);
+//$count3 = mysql_num_rows($result3);
 
-//$myname=$row['username'];
- $_SESSION['s_id'] = $row['sid'];
+$row1 = mysql_fetch_array($result);
+$row2 = mysql_fetch_array($result2);
+//$row3 = mysql_fetch_array($result3);
+
 
  if($count==1)
  {
-	
+	 $_SESSION['s_id'] = $row1['sid'];
+
  //session_register('username');
-	header("location:home.php"); // put your home page neme here
+	header("location:home.php"); // student home page
 
 }
 
  elseif($count2==1) {
-
-	header("location:abc.php");
+      $_SESSION['s_id'] = $row2['tid'];
+	header("location:tpo/tpohome.php");  //tpo home page
 }
+//elseif($count3==1) {
+  //    $_SESSION['s_id'] = $row2['cid'];
+	//header("location:company/companyhome.php");  //tpo home page
+//}
 else 
-	header("location:index.php");
-*/
+	header("location:approval.php"); //if both condition not satisfied
 
 
+/*   NORMAL LOGIN
  $mysql = "SELECT * FROM stud_login WHERE username='$username' and password='$password' and approval='yes'";
 
  $result = mysql_query($mysql) or die("cannot execute query");
@@ -68,5 +76,5 @@ $row = mysql_fetch_array($result);
 
  else
     header("location:approval.php");
-
+*/
  ?>

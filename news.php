@@ -28,7 +28,6 @@
 ?>
 
 <main id="main">
-
 	<div class="container">
 		<div class="row topspace">
 			<div class="col-sm-8 col-sm-offset-2">
@@ -38,11 +37,20 @@
 						<div class="entry-meta"> 
 							<span class="posted-on"><time class="entry-date published" date="2013-09-27">September 27, 2013</time></span>			
 						</div>
-						<h1 class="entry-title"><a href="single.html" rel="bookmark">Hello world!</a></h1>
+						<h1 class="entry-title">Hello world!</a></h1>
 					</header>
 					<div class="entry-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, molestias, architecto, adipisci, numquam dolor iusto eos reprehenderit placeat quam debitis quas magni eveniet. Saepe, nam, iste consectetur quae necessitatibus dolores provident veritatis possimus rerum facilis quia dicta itaque sapiente iusto natus quidem magni quibusdam. Explicabo nesciunt vel rem obcaecati reprehenderit eveniet culpa repudiandae. Distinctio, quia, provident illum necessitatibus repellendus rem voluptates exercitationem numquam inventore itaque atque sint nihil eveniet consequuntur eius! Laborum, at sit animi quae quidem ex tempora facilis.</p>
-					</div>
+						<pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, molestias, architecto, adipisci, numquam dolor iusto eos reprehenderit placeat quam debitis quas magni eveniet. Saepe, nam, iste consectetur quae necessitatibus dolores provident veritatis possimus rerum facilis quia dicta itaque sapiente iusto natus quidem magni quibusdam. Explicabo nesciunt vel rem obcaecati reprehenderit eveniet culpa repudiandae. Distinctio, quia, provident illum necessitatibus repellendus rem voluptates exercitationem numquam inventore itaque atque sint nihil eveniet consequuntur eius! Laborum, at sit animi quae quidem ex tempora facilis.
+                        
+<b><u>Venue:</u></b>
+<b><u>Email:</u></b>
+<b><u>Contact:</u></b>
+                        
+                        </pre>
+                    </div>				
 				</article>
-</div></div></div></main>
+            </div>
+        </div>
+    </div>
+</main><br><br></br><br>
 <?php include "foot.html" ?>
