@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 12, 2015 at 09:28 PM
+-- Generation Time: Jan 20, 2015 at 09:47 PM
 -- Server version: 5.5.38-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.3
 
@@ -25,15 +25,57 @@ USE `placement`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comp_info`
+--
+
+CREATE TABLE IF NOT EXISTS `comp_info` (
+  `cid` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `companyname` varchar(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `landline` varchar(255) NOT NULL,
+  `fax` varchar(255) NOT NULL,
+  `career` varchar(255) NOT NULL,
+  `estb_year` varchar(2552) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `hrname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comp_info`
+--
+
+INSERT INTO `comp_info` (`cid`, `username`, `companyname`, `website`, `landline`, `fax`, `career`, `estb_year`, `address`, `hrname`, `email`, `mobile`) VALUES
+(2, 'fitrangi', 'Fitrangi ', 'www.fitrangi.com', '28198981', '2130889', 'Web Development', '2014', 'goregaon', 'armash', 'talktoarmash@gmail.com', '9967031001'),
+(4, 'mind', 'mind', 'mind.@aa.com', '222', '222', 'IT', '999', 'B/02,RAHAT APT.,BEHIND SHAHEEN HOSPITAL,KAUSA', 'armash', 'armash.fankar@yahoo.com', '9967031001');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `comp_login`
 --
 
 CREATE TABLE IF NOT EXISTS `comp_login` (
-  `cid` int(255) NOT NULL,
+  `cid` int(255) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `companyname` varchar(255) DEFAULT NULL,
+  `approval` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cid`),
+  UNIQUE KEY `companyname` (`companyname`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `comp_login`
+--
+
+INSERT INTO `comp_login` (`cid`, `username`, `password`, `companyname`, `approval`, `website`) VALUES
+(2, 'fitrangi', 'fitrangi', 'fitrangi', 'yes', 'www.fitrangi.com'),
+(4, 'mind', '*D982DF5FF1FC3DAA682BCB5A66BF3FC205D50115', 'mindcraft', 'yes', 'www.info.com');
 
 -- --------------------------------------------------------
 
@@ -101,17 +143,16 @@ CREATE TABLE IF NOT EXISTS `stud_login` (
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `approval` varchar(255) NOT NULL,
-  PRIMARY KEY (`sid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  PRIMARY KEY (`sid`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `stud_login`
 --
 
 INSERT INTO `stud_login` (`sid`, `username`, `email`, `password`, `approval`) VALUES
-(5, 'nabeel', 'talktoarmash@gmail.com', 'nn', 'yes'),
-(8, 'armash', 'talktoarmash@gmail.com', '123', 'yes'),
-(9, 'saima', 'hajisaima9@gmail.com', 'sam', 'yes');
+(15, 'armash', 'talktoarmash@gmail.com', '*E452F6CB9075767B74485A3D137295EE647F823C', '');
 
 -- --------------------------------------------------------
 
