@@ -18,21 +18,21 @@ $username=$_POST['username'];
 $password=$_POST['password'];
 
 /* multilogin code*/
- $mysql = "SELECT * FROM stud_login WHERE username='$username' and password='$password' ";
+ $mysql = "SELECT * FROM stud_login WHERE username='$username' and password=password('$password') ";
 $mysql2 = "SELECT * FROM tpo WHERE username='$username' and password='$password' ";
-//$mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password='$password' ";
+$mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password=password('$password') and approval='yes'";
 
  $result = mysql_query($mysql) or die("cannot execute query");
 $result2 = mysql_query($mysql2) or die("cannot execute query");
-//$result3 = mysql_query($mysql3) or die("cannot execute query");
+$result3 = mysql_query($mysql3) or die("cannot execute query");
 
  $count = mysql_num_rows($result);
  $count2 = mysql_num_rows($result2);
-//$count3 = mysql_num_rows($result3);
+$count3 = mysql_num_rows($result3);
 
 $row1 = mysql_fetch_array($result);
 $row2 = mysql_fetch_array($result2);
-//$row3 = mysql_fetch_array($result3);
+$row3 = mysql_fetch_array($result3);
 
 
  if($count==1)
@@ -48,10 +48,10 @@ $row2 = mysql_fetch_array($result2);
       $_SESSION['s_id'] = $row2['tid'];
 	header("location:tpo/tpohome.php");  //tpo home page
 }
-//elseif($count3==1) {
-  //    $_SESSION['s_id'] = $row2['cid'];
-	//header("location:company/companyhome.php");  //tpo home page
-//}
+elseif($count3==1) {
+     $_SESSION['s_id'] = $row3['cid'];
+	header("location:company/comphome.php");  //tpo home page
+}
 else 
 	header("location:approval.php"); //if both condition not satisfied
 

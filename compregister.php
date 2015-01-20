@@ -1,5 +1,6 @@
 <?php
 include "head.html";
+session_start();
 ?>
 
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -75,10 +76,7 @@ html,body {
 						<!--<label class="control-label">Company name</label>-->
 						<input type="text" required data-validation-required-message="Please enter your name." class="form-control" placeholder="Company Name" name="companyname" />
 					</div>
-					<div class="form-group">
-						<!--<label class="control-label">email</label>-->
-						<input type="text" required data-validation-required-message="Please enter your name." class="form-control" placeholder="Email" name="email" />
-					</div>
+					
 					
                         <div class="form-group">
 						<!--<label class="control-label">website</label>-->
