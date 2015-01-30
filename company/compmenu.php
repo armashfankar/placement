@@ -73,9 +73,9 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="comphome.php">Home <i class="fa fa-home"></i></a></li>
 					<li><a href="postjob.php">Post Job <i class="fa fa-star-half-o "></i></a></li>
-					
+					<li><a href="posted.php">View Posted Jobs <i class="fa fa-gear "></i></a></li>
 					<li><a href="compupdate.php">Update Profile <i class="fa fa-gear "></i></a></li>
-                    <li><a href="college.php">College Detail <i class="fa fa-gear "></i></a></li>
+                    
                     
                     <!--li class="dropdown">
 					<	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Notification  <i class="fa fa-bell-o "></i></a>

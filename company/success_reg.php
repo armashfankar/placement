@@ -20,10 +20,10 @@ include "../classes/class.phpmailer.php"; // include the class name
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from comp_login where cid='{$compid}'";
+				$sql = "SELECT * from comp_info where cid='{$compid}'";
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
-				$username = $row['username'];
+				//$hrname = $row['hrname'];
 				$email = $row['email'];
                 $sid= $studentid;      
 
@@ -41,7 +41,7 @@ include "../classes/class.phpmailer.php"; // include the class name
 	// put your while loop here like below,
 	$mail->Subject = "Your Placement Registeration"; //Subject od your mail
 	$mail->AddAddress($email, "placement cell"); //To address who will receive this email
-	$mail->MsgHTML("<b>Hello<p>Thank you for registering with Placement Cell. We welcome you on board and hope to have a great opportunities ahead, together.</p><br><img src="."http://www.psgnursing.ac.in/wp-content/uploads/2012/06/placement.jpg".">"); //Put your body of the message you can place html code here
+	$mail->MsgHTML("<b>Hello <p>Thank you for registering with Placement Cell. We welcome you on board and hope to have a great opportunities ahead, together.</p><br><img src="."http://www.psgnursing.ac.in/wp-content/uploads/2012/06/placement.jpg".">"); //Put your body of the message you can place html code here
 	//$mail->AddAttachment("email-pic/pl.jpg"); //Attach a file here if any or comment this line, 
 	$send = $mail->Send(); //Send the mails
 	if($send){

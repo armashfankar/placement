@@ -18,7 +18,7 @@ $username=$_POST['username'];
 $password=$_POST['password'];
 
 /* multilogin code*/
- $mysql = "SELECT * FROM stud_login WHERE username='$username' and password=password('$password') ";
+ $mysql = "SELECT * FROM stud_login WHERE username='$username' and password=password('$password') and approval='yes'";
 $mysql2 = "SELECT * FROM tpo WHERE username='$username' and password='$password' ";
 $mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password=password('$password') and approval='yes'";
 
@@ -50,7 +50,7 @@ $row3 = mysql_fetch_array($result3);
 }
 elseif($count3==1) {
      $_SESSION['s_id'] = $row3['cid'];
-	header("location:company/comphome.php");  //tpo home page
+	header("location:company/comphome.php");  //comp home page
 }
 else 
 	header("location:approval.php"); //if both condition not satisfied
