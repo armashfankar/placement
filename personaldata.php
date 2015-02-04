@@ -46,12 +46,13 @@ include "menu1.php"; ?>
                  <tbody>
                     <tr class="active">
                         <td>Full Name</td>
-                        <td><input type="text" class="form-control" name="fullname" id="inputName"                  placeholder="Full Name">
+                        <td><input type="text" class="form-control" name="fullname" id="inputName" placeholder="Full Name">
                         </td>   
                      </tr>
                     <tr class="success">
                         <td>DOB</td>
-                        <td><input type="text" class="form-control" id="inputaddress"                  placeholder="DD/MM/YYYY" name="dob">
+                        <td><!--<input type="text" class="form-control" id="inputaddress"                  placeholder="DD/MM/YYYY" name="dob"-->
+                            <input type="date" name="dob">
                         </td>   
 
                      </tr>
@@ -88,7 +89,13 @@ include "menu1.php"; ?>
                     
                     <tr class="danger">
                         <td>Department</td>
-                        <td><input type="text" class="form-control" id="inputdepartment"                  placeholder="Department" name="department">
+                        <td><select name="department">
+                            <option value ="computer" selected>Computer Engineering</option>
+                            <option value ="electronics&tele">Electronics & Tele.</option>
+                            <option value ="civil" >Civil Engineering</option>
+                            <option value ="mechanical">Mechanical Engineering</option>
+                            <option value ="electrical">Electrical Engineering</option>
+                            </select>
                         </td>
                     </tr>
                     <tr class="active">

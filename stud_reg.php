@@ -1,20 +1,34 @@
 <?php 
 session_start();
-$username=$_POST['username'];
-$email=$_POST['email'];
-$password=$_POST['password'];
-$repeat=$_POST['repeatpassword'];
-
-if($password==$repeat){
-    
 $host="localhost";
 $user="root";
 $pass="root";
 $conn=mysql_connect("$host","$user","$pass");
 mysql_select_db("placement",$conn);
-$username=$_POST[username];
-$password=$_POST[password];
-$email=$_POST[email];
+
+$username=$_POST['username'];
+
+//$user = "SELECT * FROM comp_login as c,stud_login as s WHERE c.username='$username'
+//and s.username='$username'";
+
+$user = "SELECT * FROM stud_login where username='$username'";
+
+ $userresult = mysql_query($user) or die("cannot execute query");
+
+ $usercount = mysql_num_rows($userresult);
+if($usercount==1)
+{
+   echo "<center><h3><Font Color=red>Username Already Exist.<br><a href=register.php>Go Back</a></Font></h3></center>";
+    die();// put your home page neme here
+
+}
+else {
+$email=$_POST['email'];
+$password=$_POST['password'];
+$repeat=$_POST['repeatpassword'];
+
+if($password==$repeat){
+
 $sql="insert into stud_login(username,email,password) values ('$_POST[username]','$_POST[email]',password('$_POST[password]'))";
 
 
@@ -50,5 +64,5 @@ else {
     echo "Password Do Not Match"; 
     echo "<a href=register.php>"."<br>"."Go Back";
 }
-
+}
 ?>

@@ -1,17 +1,35 @@
 <?php 
 session_start();
+session_start();
+$host="localhost";
+$user="root";
+$pass="root";
+$conn=mysql_connect("$host","$user","$pass");
+mysql_select_db("placement",$conn);
+
 $username=$_POST['username'];
+
+//$user = "SELECT * FROM comp_login as c,stud_login as s WHERE c.username='$username'
+//and s.username='$username'";
+$user = "SELECT * FROM comp_login where username='$username'";
+
+ $userresult = mysql_query($user) or die("cannot execute query");
+
+ $usercount = mysql_num_rows($userresult);
+if($usercount==1)
+{
+   echo "<center><h3><Font Color=red>Username Already Exist.<br><a href=compregister.php>Go Back</a></Font></h3></center>";
+    die();// put your home page neme here
+
+}
+else {
+
 $website=$_POST['website'];
 $password=$_POST['password'];
 $compname=$_POST['companyname'];
 $repeat=$_POST['repeatpassword'];
 if($password==$repeat){
     
-$host="localhost";
-$user="root";
-$pass="root";
-$conn=mysql_connect("$host","$user","$pass");
-mysql_select_db("placement",$conn);
 $sql="insert into comp_login(username,password,website,companyname) values ('$username',password('$password'),'$website','$compname')";
 
 
@@ -47,5 +65,5 @@ else {
     echo "Password Do Not Match"; 
     echo "<a href=register.php>"."<br>"."Go Back";
 }
-
+}
 ?>

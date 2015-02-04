@@ -51,10 +51,16 @@
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
                 $username=$row['username'];
+               
+                $sql1 = "SELECT * from tpo_info where tid='{$tpoid}'";
+				$result1 = mysql_query($sql1,$con);
+				$row1=mysql_fetch_array($result1);
+                
+                $name=$row1['name'];
                 ?>
                 <img class="img-circle" src="uploaded/<?php echo $username; ?> " height="160" width="160">
                 <?php
-                echo "<font color=white>".Welcome."&nbsp;".$username."</font>";
+                echo "<font color=white>".Welcome."&nbsp;".$name."</font>";
 				?>
                 </span>
 			
@@ -74,18 +80,28 @@
 					<li class="active"><a href="tpohome.php">Home <i class="fa fa-home"></i></a></li>
 					<li><a href="postnews.php">Post News & Events <i class="fa fa-star-half-o "></i></a></li>
 					
-					<li><a href="tpoupdate.php">Update Profile <i class="fa fa-gear "></i></a></li>
-                    <li><a href="tpostudent.php">Student <i class="fa fa-gear "></i></a></li>
-                    <li><a href="tpocompany.php">Company <i class="fa fa-gear "></i></a></li>
+					
+                    <!--li><a href="tpostudent.php">Student <i class="fa fa-gear "></i></a></li>
+                    <li><a href="tpocompany.php">Company <i class="fa fa-gear "></i></a></li-->
+                    <li><a href="tpoupdate.php">Update Profile <i class="fa fa-gear "></i></a></li>
                     
                     <li class="dropdown">
-					<!--	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Notification  <i class="fa fa-bell-o "></i></a>
+					<a href="" class="dropdown-toggle" data-toggle="dropdown">Student <i class="fa fa-bell-o "></i></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Notification 1</a></li>
-							<li><a href="#">Notification 2</a></li>
-							<li><a href="#">Notification 3</a></li>
+							<li><a href="pendingstud.php">Pending Students</a></li>
+							<li><a href="approvedstud.php">Approved Students</a></li>
+							<li><a href="viewstud.php">View Student Profile</a></li>
 						</ul>
-					</li>-->
+					</li>
+                    
+                    <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-bell-o "></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="pendingjobs.php">Pending Jobs</a></li>
+							<li><a href="approvedjobs.php">Approved Jobs</a></li>
+							<li><a href="viewcomp.php">View Company Details</a></li>
+						</ul>
+					</li>
 
 		<li><a href="../logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
 				</ul>

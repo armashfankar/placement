@@ -45,7 +45,7 @@ include "classes/class.phpmailer.php"; // include the class name
 	//$mail->AddAttachment("email-pic/pl.jpg"); //Attach a file here if any or comment this line, 
 	$send = $mail->Send(); //Send the mails
 	if($send){
-		 header('Location:approval.php');
+		 header('Location:success.php');
 
 	       }
 	else{

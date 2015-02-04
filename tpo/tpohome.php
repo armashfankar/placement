@@ -1,8 +1,7 @@
 <?php
 include "tpomenu.php"; ?>
-<?php session_start(); 
-
-	$tpoid = $_SESSION['s_id'];
+<?php
+					$tpoid = $_SESSION['s_id'];
 
 
 				$host="localhost";
@@ -21,11 +20,15 @@ include "tpomenu.php"; ?>
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from tpo where tid='{$tpoid}'";
-                $result = mysql_query($sql) or die("cannot execute query");
-                $count = mysql_num_rows($result);
-                $username = $row['username'];
+				$sql = "SELECT * from tpo_info where tid='{$tpoid}'";
+				$result = mysql_query($sql,$con);
+				$row=mysql_fetch_array($result);
+                $name=$row['name'];
+                $degree=$row['degree'];
+                $email=$row['email'];
+                $mobile=$row['mobile'];
                 
+                                
 ?>  
 <style type="text/css">
     .bs-example{
@@ -41,5 +44,62 @@ border-top: 1px solid #7C7A7A;
 </style>
 
 <body>
-<center><h1>under construction</h1></center>
+
+<div class="container">
+	<div id="respond">
+<div class="bs-example">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>Tpo Details</th>
+                    <th></th>
+                    
+                    </tr>
+                </thead>
+                 <tbody>
+                     <form action="updateprofile.php" method="post" id="commentform">
+                    <tr class="active">
+                        <td>Name</td>
+                        <td><?php echo $name ?></td>
+                        <td></td><td></td>  <td></td> 
+                     </tr>
+                         <tr class="warning">
+                        <td>Degree</td>
+                        <td><?php echo $degree ?></td>
+                         <td></td>  <td></td><td></td>
+                     </tr>
+                    <tr class="success">
+                        <td>Email</td>
+                        <td><?php echo $email ?></td>
+                       <td></td><td></td><td></td>
+                     </tr>
+                    
+                    <tr class="info">
+                        <td>Mobile</td>
+                        <td><?php echo $mobile ?></td>
+                    <td></td>
+                        <td></td><td></td>
+                    </tr>
+                    <tr class="active">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-action">Edit Profile</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+        
+    </div>
+</div><br><br><br><br><Br>
+
+
 </body>
+<?php include "../foot.html"; ?>

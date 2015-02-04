@@ -194,4 +194,4 @@ border-top: 1px solid #7C7A7A;
 </div>
 
         <!---UPDATE INFO BLOCK ENDS--->
-<?php include "foot.html"; ?>
+<?php include "../foot.html"; ?>

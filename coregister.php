@@ -12,7 +12,7 @@ include "head.html";
 				<div class="box-content">
 					<div class="text-center">
 						<h3 class="page-header">Placement Register</h3>
-                    <form name="studreg" action="coord_Reg.php" method="post">   
+                    <form name="compreg" action="coord_Reg.php" method="post">   
 					</div>
 					<div class="form-group">
 						<!--<label class="control-label">Company name</label>-->
