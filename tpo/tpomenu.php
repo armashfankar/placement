@@ -91,6 +91,7 @@
 							<li><a href="pendingstud.php">Pending Students</a></li>
 							<li><a href="approvedstud.php">Approved Students</a></li>
 							<li><a href="viewstud.php">View Student Profile</a></li>
+                            <li><a href="placedstud.php">Placed Students</a></li>
 						</ul>
 					</li>
                     

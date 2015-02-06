@@ -1,6 +1,5 @@
 <?php 
 session_start();
-session_start();
 $host="localhost";
 $user="root";
 $pass="root";
@@ -9,17 +8,18 @@ mysql_select_db("placement",$conn);
 
 $username=$_POST['username'];
 
-//$user = "SELECT * FROM comp_login as c,stud_login as s WHERE c.username='$username'
-//and s.username='$username'";
-$user = "SELECT * FROM comp_login where username='$username'";
+$user = "SELECT * FROM stud_login as s,comp_login as c WHERE c.username='$username'
+or s.username='$username'";
+
+//$user = "SELECT * FROM comp_login where username='$username'";
 
  $userresult = mysql_query($user) or die("cannot execute query");
 
  $usercount = mysql_num_rows($userresult);
 if($usercount==1)
 {
-   echo "<center><h3><Font Color=red>Username Already Exist.<br><a href=compregister.php>Go Back</a></Font></h3></center>";
-    die();// put your home page neme here
+   echo "<center><h3><Font Color=red>Username Already Exist.<br><mark>Please Choose Different Username</mark><br><a href=register.php>Go Back</a></Font></h3></center>";
+    die();
 
 }
 else {

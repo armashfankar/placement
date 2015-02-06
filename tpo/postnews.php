@@ -28,10 +28,10 @@ border-top: 1px solid #7C7A7A;
                     </tr>
                 </thead>
                  <tbody>
-                     <form action="updatestudent.php" method="post" id="commentform">
+                     <form action="tponews.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Event Name</td>
-                        <td><input type="text" class="form-control" name="title" id="inputName"                                     placeholder="Event Name" value="" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="text" class="form-control" name="title" id="inputName"            placeholder="Event Name" value="" required data-validation-required-message="Cannot Be Blank">
                         </td>   <td></td>
                      </tr>
                     <tr class="active">

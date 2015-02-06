@@ -52,7 +52,7 @@
 				$row=mysql_fetch_array($result);
                 $username=$row['username'];
                 ?>
-                <img class="img-circle" src="uploaded/<?php echo $username; ?> " height="160" width="160">
+                <img class="img-circle" src="uploaded/<?php echo $username; ?>" height="160" width="160">
                 <?php
                 echo "<font color=white>".Welcome."&nbsp;".$username."</font>";
 				?>

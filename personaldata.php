@@ -134,12 +134,20 @@ include "menu1.php"; ?>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Please Insert Accurate % " name="ssc">
                         </td>
                 </tr>
-                <tr class="success">
-              <td>Key Skills</td>
-                        <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Your Key Skills" name="key_skills">
+              <tr class="danger">
+                        <td>Key Skill</td>
+                        <td><select name="key_skills" multiple>
+                            <option value ="java" selected>Java</option>
+                            <option value ="python">Python</option>
+                            <option value ="c" >C</option>
+                            <option value ="c++">C++</option>
+                            <option value ="php">Php</option>
+                            <option value ="database">Database</option>
+                            <option value ="networking">Networking</option>
+                            <option value =".net">.Net</option>
+                            </select>
                         </td>
-                </tr>
-                <tr class="info">
+                    </tr>              <tr class="info">
               <td>Project Titile</td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Project Title" name="project_title">
                         </td>
