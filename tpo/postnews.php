@@ -54,7 +54,7 @@ border-top: 1px solid #7C7A7A;
                     
                     <tr class="info">
                         <td>Contact</td>
-                        <td><input type="text" class="form-control" id="inputabout"                  placeholder="COntact Details" name="contact" value="" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="text" class="form-control" id="inputabout"                  placeholder="Contact Details" name="contact" value="" required data-validation-required-message="Cannot Be Blank">
                         </td><td></td>
                     </tr> 
                     <tr class="warning">

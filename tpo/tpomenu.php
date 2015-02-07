@@ -83,7 +83,7 @@
 					
                     <!--li><a href="tpostudent.php">Student <i class="fa fa-gear "></i></a></li>
                     <li><a href="tpocompany.php">Company <i class="fa fa-gear "></i></a></li-->
-                    <li><a href="tpoupdate.php">Update Profile <i class="fa fa-gear "></i></a></li>
+                    <li><a href="updateprofile.php">Update Profile <i class="fa fa-gear "></i></a></li>
                     
                     <li class="dropdown">
 					<a href="" class="dropdown-toggle" data-toggle="dropdown">Student <i class="fa fa-bell-o "></i></a>
