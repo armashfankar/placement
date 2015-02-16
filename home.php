@@ -23,7 +23,8 @@ include "menu.php"; ?>
 	
 				$sql = "SELECT * from student_info where sid='{$studentid}'";
                 $result = mysql_query($sql) or die("cannot execute query");
-                $count = mysql_num_rows($result);
+                //$count = mysql_num_rows($result);
+                $row = mysql_fetch_array($result);
                 $username = $row['username'];
                 $email = $row['email'];
                 $fullname= $row['fullname'];
@@ -73,7 +74,7 @@ border-top: 1px solid #7C7A7A;
                      <form action="updateprofile.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Full Name</td>
-                        <td><?php echo $fullname ?></td>
+                        <td><?php echo $fullname; ?></td>
                         <td></td>   
                      </tr>
                          <tr class="active">

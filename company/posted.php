@@ -1,5 +1,7 @@
 <?php
-include "compmenu.php"; 
+include "compmenu.php";
+?>    <h1 class="entry-title">Posted Jobs</h1>
+<?php
 	$cid = $_SESSION['s_id'];
 
 
@@ -23,7 +25,21 @@ include "compmenu.php";
 				$result = mysql_query($sql,$con);
 				$row=mysql_fetch_array($result);
                 $compname=$row['companyname'];
-                
+                  $mysql = "SELECT * from job where companyname='$compname' and approval='yes'";
+				$result2 = mysql_query($mysql,$con);
+				while($row2=mysql_fetch_array($result2)){;
+                $jid=$row2['jid'];
+                $dept=$row2['department'];
+                $domain=$row2['domain'];
+                $joblocation=$row2['job_location'];
+                $jobrole=$row2['job_role'];
+                $ssc=$row2['ssc'];
+                $hsc=$row2['hsc'];
+                $dip=$row2['diploma_agg'];
+                $deg=$row2['deg_agg'];
+                $venue=$row2['venue'];
+                $approval=$row2['approval'];
+   
                 
                 ?>
                 <style type="text/css">
@@ -38,38 +54,23 @@ include "compmenu.php";
                     border-top: 1px solid #7C7A7A;
                     }
                 </style>  <body>
-    <h1 class="entry-title">Posted Jobs</h1>
 <div class="container">
 	<div id="respond">
 <div class="bs-example">
     <?php 				
-                $mysql = "SELECT * from job where compname='{$compname}' and approval='yes'";
-				$result2 = mysql_query($mysql,$con);
-				$row2=mysql_fetch_array($result2);
-                $dept=$row2['department'];
-                $domain=$row2['domain'];
-                $joblocation=$row2['job_location'];
-                $jobrole=$row2['job_role'];
-                $ssc=$row2['ssc'];
-                $hsc=$row2['hsc'];
-                $dip=$row2['diploma_agg'];
-                $deg=$row2['deg_agg'];
-                $venue=$row2['venue'];
-                $approval=$row2['approval'];
-        if($approval=='yes')
+                   if($approval=='yes')
         {            
 ?>
             <table class="table">
                 <thead>
                     <tr>
                     <th></th>
-                    <th>Company Details</th>
+                    <th>Posted Job</th>
                     <th></th>
                     
                     </tr>
                 </thead>
                  <tbody>
-                     <form action="compupdate.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Company Name</td>
                         <td><?php echo $compname; ?></td>
@@ -126,7 +127,9 @@ include "compmenu.php";
                         <td></td>
                         <td></td>
                         <td>
-                            <button type="submit" class="btn btn-action">Edit Profile</button>
+                  <form action="removejob.php" method="post" id="commentform">
+                   <input type="hidden" value="<?php echo $jid; ?>" name="jid">
+                <button type="submit" class="btn btn-action">Remove</button>
                         </td>
                     </tr>
                     
@@ -139,11 +142,11 @@ include "compmenu.php";
                     
                 
 <?php
-        }
+        } 
   else 
 
 {
 echo "<b><center><h3><font color=red>No job Posted</font></h3></center></b>";
       echo "<center><a href=postjob.php>Post New JOb</a></center>";
 }
-  ?></body>
+} ?></body>

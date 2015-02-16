@@ -47,18 +47,18 @@
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from tpo where tid='{$tpoid}'";
-				$result = mysql_query($sql,$con);
-				$row=mysql_fetch_array($result);
-                $username=$row['username'];
+				$sql1 = "SELECT * from tpo where tid='{$tpoid}'";
+				$result1 = mysql_query($sql,$con);
+				$row1=mysql_fetch_array($result);
+                $username=$row1['username'];
                
-                $sql1 = "SELECT * from tpo_info where tid='{$tpoid}'";
-				$result1 = mysql_query($sql1,$con);
-				$row1=mysql_fetch_array($result1);
+                $sql2 = "SELECT * from tpo_info where tid='{$tpoid}'";
+				$result2 = mysql_query($sql2,$con);
+				$row2=mysql_fetch_array($result2);
                 
-                $name=$row1['name'];
+                $name=$row2['name'];
                 ?>
-                <img class="img-circle" src="uploaded/<?php echo $username; ?> " height="160" width="160">
+                <img class="img-circle" src="uploaded/<?php echo $name; ?> " height="160" width="160">
                 <?php
                 echo "<font color=white>".Welcome."&nbsp;".$name."</font>";
 				?>
@@ -78,29 +78,34 @@
 				
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="tpohome.php">Home <i class="fa fa-home"></i></a></li>
-					<li><a href="postnews.php">Post News & Events <i class="fa fa-star-half-o "></i></a></li>
-					
-					
-                    <!--li><a href="tpostudent.php">Student <i class="fa fa-gear "></i></a></li>
-                    <li><a href="tpocompany.php">Company <i class="fa fa-gear "></i></a></li-->
+                    
+                    <li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown">News & Events <i class="fa fa-info-circle "></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="postnews.php">Post News & Event</a></li>
+							<li><a href="postednews.php">View Posted Events</a></li>
+				        </ul>
+					</li>
+                
                     <li><a href="updateprofile.php">Update Profile <i class="fa fa-gear "></i></a></li>
                     
                     <li class="dropdown">
-					<a href="" class="dropdown-toggle" data-toggle="dropdown">Student <i class="fa fa-bell-o "></i></a>
+					<a href="" class="dropdown-toggle" data-toggle="dropdown">Students <i class="fa fa-users"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="pendingstud.php">Pending Students</a></li>
 							<li><a href="approvedstud.php">Approved Students</a></li>
-							<li><a href="viewstud.php">View Student Profile</a></li>
-                            <li><a href="placedstud.php">Placed Students</a></li>
-						</ul>
+							<li><a href="placedstud.php">Placed Students</a></li>
+						    <li><a href="searchstud.php">Search Students</a></li>
+						
+                        </ul>
 					</li>
                     
                     <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-bell-o "></i></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-building-o"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="pendingjobs.php">Pending Jobs</a></li>
 							<li><a href="approvedjobs.php">Approved Jobs</a></li>
-							<li><a href="viewcomp.php">View Company Details</a></li>
+                            <li><a href="appliedstud.php">Applied Students</a></li>
 						</ul>
 					</li>
 

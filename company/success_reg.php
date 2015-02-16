@@ -36,8 +36,8 @@ include "../classes/class.phpmailer.php"; // include the class name
 	$mail->SMTPAuth = true; //Whether to use SMTP authentication
 	$mail->Username = SMTP_UNAME; //Username for SMTP authentication any valid email created in your domain
 	$mail->Password = SMTP_PWORD; //Password for SMTP authentication
-	$mail->AddReplyTo("reply@placemnt.com", "Placement Reply"); //reply-to address
-	$mail->SetFrom("info@placement.com", "Placement Cell"); //From address of the mail
+	$mail->AddReplyTo("placementcell00@gmail.com", "Placement Reply"); //reply-to address
+	$mail->SetFrom("placementcell00@gmail.com", "Placement Cell"); //From address of the mail
 	// put your while loop here like below,
 	$mail->Subject = "Your Placement Registeration"; //Subject od your mail
 	$mail->AddAddress($email, "placement cell"); //To address who will receive this email

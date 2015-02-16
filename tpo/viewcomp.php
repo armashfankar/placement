@@ -2,7 +2,7 @@
 include "tpomenu.php"; ?>
 <?php session_start(); 
 
-$sid=$_POST['sid'];
+$compname=$_POST['companyname'];
 	//$studentid = $_SESSION['s_id'];
 
 
@@ -22,28 +22,22 @@ $sid=$_POST['sid'];
 
 				mysql_select_db("placement", $con);
 	
-				$sql3 = "SELECT * from student_info as si,stud_login as sl where si.sid='$sid' and sl.sid='$sid'";
+				$sql3 = "SELECT * from comp_info where companyname='$compname'";
                 $result3= mysql_query($sql3) or die("cannot execute query");
                 $count3 = mysql_num_rows($result3);
                  $row3 = mysql_fetch_array($result3);
-                $username = $row3['username'];
-                $email = $row3['email'];
-                $fullname= $row3['fullname'];
+                $uname= $row3['username'];    
+                $cname= $row3['companyname'];
+                $website = $row3['website'];
+                $landline = $row3['landline'];  
+                $fax = $row3['fax'];
+                $career = $row3['career'];
+                $estb = $row3['estb_year'];
                 $address = $row3['address'];
-                $dob = $row3['dob'];  
-                $about = $row3['about_you'];
-                $institute = $row3['institute'];
-                $university = $row3['university'];
-                $department = $row3['department'];
-                $batch=$row3['batch'];
-                $deg7=$row3['deg_sem7'];
-                $deg8=$row3['deg_sem8'];
-                $degagg=$row3['deg_agg'];
-                $diploma=$row3['diploma_agg'];
-                $hsc=$row3['hsc'];
-                $ssc=$row3['ssc'];
-                $key=$row3['key_skills'];
-                $project=$row3['project_title'];
+                $hrname=$row3['hrname'];
+                $email=$row3['email'];
+                $mobile=$row3['mobile'];
+                
 ?>  
 <style type="text/css">
     .bs-example{
@@ -62,17 +56,16 @@ border-top: 1px solid #7C7A7A;
                             font-size:1.5em;
                             font-variant:small-caps;
                             font-style:oblique;
-                            font-weight:800;"><?php echo $username;?> Profile</h1>
+                            font-weight:800;"><?php echo $cname;?> Profile</h1>
 <div class="container">
 	<div id="respond">
 <div class="bs-example">
-      <button type="submit" id="forgotpassword" data-toggle="modal" data-target="#largeModal1" class="btn btn-action pull-right">Send Email</button>
-    <form action="setasplaced.php" method="post">
-  <input type="hidden" value="<?php echo $sid; ?>" name="sid">
-<button type="submit" id=""  class="btn btn-action pull-right">Mark As Placed</button>
-        </form>
-  
-            <table class="table">
+    <!--form action="emailtocomp.php" method="post">
+        <input type="hidden" value="<?php echo $email ?>" name="email">
+        <button type="submit" class="btn btn-action pull-right">Send Email</button>
+    </form-->
+    <button type="submit" id="forgotpassword" data-toggle="modal" data-target="#largeModal1" class="btn btn-action pull-right">Send Email</button>
+        <table class="table">
                 <thead>
                     <tr>
                     <th></th>
@@ -83,86 +76,58 @@ border-top: 1px solid #7C7A7A;
                 </thead>
                  <tbody>
                     <tr class="active">
-                        <td><b>Full Name</b></td>
-                        <td><b><font color="red"><?php echo $fullname ?></b></font></td>
-                        <td><img class="img-circle" src="../uploaded/<?php echo $username; ?>" height="160" width="160"></td>   
+                        <td><b>Company Name</b></td>
+                        <td><b><font color="red"><?php echo $cname ?></b></font></td>
+                        <td><img class="img-circle" src="../company/uploaded/<?php echo $uname; ?>" height="160" width="160"></td> 
+                        
                      </tr>
                          <tr class="active">
-                        <td>DOB</td>
-                        <td><?php echo $dob ?></td>
+                        <td>Website</td>
+                        <td><?php echo $website ?></td>
                          <td></td>  
                      </tr>
                     <tr class="success">
-                        <td>Address</td>
-                        <td><?php echo $address ?></td>
+                        <td>Landline</td>
+                        <td><?php echo $landline ?></td>
                        <td></td>
                      </tr>
                     
                     <tr class="info">
-                        <td>About You</td>
-                        <td><?php echo $about ?></td>
+                        <td>Fax</td>
+                        <td><?php echo $fax ?></td>
                     <td></td>
                     </tr>
                     <tr class="warning">
-                        <td>University Name</td>
-                        <td><?php echo $university ?></td>
+                        <td>Career</td>
+                        <td><?php echo $career ?></td>
                     <td></td>
                     </tr>
                     
                     <tr class="warning">
-                        <td>Institute Name</td>
-                        <td><?php echo $institute ?></td>
+                        <td>Establishment Year</td>
+                        <td><?php echo $estb ?></td>
                     <td></td>
                     </tr>
                     <tr class="danger">
-                        <td>Department</td>
-                        <td><?php echo $department ?></td>
+                        <td>Address</td>
+                        <td><?php echo $address ?></td>
                         <td></td>                   </tr>
                     <tr class="info">
-                        <td>Batch</td>
-                        <td><?php echo $batch ?></td>
+                        <td>HR Name</td>
+                        <td><?php echo $hrname ?></td>
                        <td></td>
                     </tr>
                          <tr class="success">
-                        <td>Degree Sem 7 %</td>
-                        <td><?php echo $deg7 ?></td>
+                        <td>Email</td>
+                        <td><?php echo $email ?></td>
                              <td></td>
                         </tr>
                         <tr class="info">
-                        <td>Degree Sem 8 %</td>
-                        <td><?php echo $deg8 ?></td>
+                        <td>Mobile Number</td>
+                        <td><?php echo $mobile ?></td>
                             <td></td>
                         </tr>
-                         <tr class="warning">
-                        <td>Degree Aggrigate %</td>
-                        <td><?php echo $degagg ?></td>
-                        </tr>
-                         <tr class="danger">
-                        <td>Diploma Aggrigate %</td>
-                        <td><?php echo $diploma ?></td>
-                             <td></td>
-                        </tr>
-                          <tr class="success">
-                        <td>HSC %</td>
-                        <td><?php echo $hsc ?></td>
-                              <td></td>
-                        </tr>
-                          <tr class="danger">
-                        <td>SSC %</td>
-                        <td><?php echo $ssc ?></td>
-                              <td></td>
-                        </tr>
-                          <tr class="warning">
-                        <td>Key Skills</td>
-                        <td><?php echo $key ?></td>
-                              <td></td>
-                        </tr>
-                         <tr class="success">
-                        <td>Project Title</td>
-                        <td><?php echo $project ?></td>
-                             <td></td>
-                        </tr>
-                    <tr class="info">
+                       <tr class="info">
                         <td></td>
                         <td></td>
                     </tr>
@@ -173,15 +138,17 @@ border-top: 1px solid #7C7A7A;
     </div>
 </div>
         
+    </div>
+
 
 
 <div class="modal fade" id="largeModal1" tabindex="-1" role="dialog" aria-          labelledby="largeModal" aria-hidden="true">
-    <form id="companyemail" action="emailtostud.php" method="post" class="form-horizontal" role="form">
+    <form id="companyemail" action="emailtocomp.php" method="post" class="form-horizontal" role="form">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
- <h4 class="modal-title" id="myModalLabel">Send Email To <?php echo $fullname; ?></h4>
+ <h4 class="modal-title" id="myModalLabel">Send Email To <?php echo $compname; ?></h4>
                                 </div>
                                 <div class="modal-body">
                                     <div class="container-fluid">
@@ -206,6 +173,5 @@ border-top: 1px solid #7C7A7A;
                 </div>
             </div>
 
-    </div>
 </div><br><br><br><br><Br>
 <?php include "../foot.html"; ?>

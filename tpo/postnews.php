@@ -1,5 +1,8 @@
 <?php
-include "tpomenu.php"; ?>
+include "tpomenu.php";
+	$tpoid = $_SESSION['s_id'];
+
+?>
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -48,6 +51,12 @@ border-top: 1px solid #7C7A7A;
                     <tr class="success">
                         <td>Venue</td>
                         <td><input type="text" class="form-control" id="inputaddress"                  placeholder="Enter venue" name="venue" value="" required data-validation-required-message="Cannot Be Blank">
+                        </td>   <td></td>
+
+                     </tr>
+                    <tr class="success">
+                        <td>Last Date To Apply</td>
+                        <td><input type="date" class="form-control" id="inputaddress"                  placeholder="Enter venue" name="last_date" value="" required data-validation-required-message="Cannot Be Blank">
                         </td>   <td></td>
 
                      </tr>

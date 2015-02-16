@@ -33,53 +33,75 @@ border-top: 1px solid #7C7A7A;
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from student_info where sid='{$studentid}'";
-                $result = mysql_query($sql) or die("cannot execute query");
-                $count = mysql_num_rows($result);
-                $fullname= $row['fullname'];
-                $address = $row['address'];
-                $dob = $row['dob'];  
-                $gender = $row['gender'];      
-                $about = $row['about_you'];
-                $institute = $row['institute'];
-                $university = $row['university'];
-                $department = $row['department'];
-                $batch=$row['batch'];
-                $deg7=$row['deg_sem7'];
-                $deg8=$row['deg_sem8'];
-                $degagg=$row['deg_agg'];
-                $diploma=$row['diploma_agg'];
-                $hsc=$row['hsc'];
-                $ssc=$row['ssc'];
-                $key=$row['key_skills'];
-                $project=$row['project_title'];
+				$mysql = "SELECT * from student_info where sid='{$studentid}'";
+                $result3 = mysql_query($mysql) or die("cannot execute query");
+                //$count3 = mysql_num_rows($result3);
+                $row3 = mysql_fetch_array($result3);
+                $fullname= $row3['fullname'];
+                $address = $row3['address'];
+                $dob = $row3['dob'];  
+                $gender = $row3['gender'];      
+                $about = $row3['about_you'];
+                $institute = $row3['institute'];
+                $university = $row3['university'];
+                $department = $row3['department'];
+                $batch=$row3['batch'];
+                $deg7=$row3['deg_sem7'];
+                $deg8=$row3['deg_sem8'];
+                $degagg=$row3['deg_agg'];
+                $diploma=$row3['diploma_agg'];
+                $hsc=$row3['hsc'];
+                $ssc=$row3['ssc'];
+                $key=$row3['key_skills'];
+                $project=$row3['project_title'];
 
 				?>
 <div class="container">
-    <div id="respond">
+<div id="respond">
        <!----UPLOAD PHOTO BLOCK--->
        
- <div class="bs-example">
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th> Upload Your Photo Here.</th>
-                    <th></th>
-                     <th></th>
-                    </tr>
-                </thead>
-                 <tbody>
-        <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
+<div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+            <th> Upload Your Photo Here.</th>
+            <th></th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action ='uploadfile.php' method='POST' enctype='multipart/form-data'>
 	
-        <tr class="success">
-                        <td><input type='file' name='myfile'></td>
-                    
-                  
-	          <td> <input type ='submit' name='Upload'> </td>
-		<td>Note:Please choose file less than 200Kbs</td>
-	</tr>
+                <tr class="success">
+                                <td><input type='file' name='myfile'></td>
+                                <td> <input type ='submit' name='Upload'> </td>
+                                <td>Note:Please choose file less than 200Kbs</td>
+                </tr>
+            </form>
+        </tbody>
+     </table>
+</div>
 
-        </form></tbody></table></div>
+<!--div class="bs-example">
+    <table class="table">
+        <thead>
+            <tr>
+            <th> Upload New Resume Here.</th>
+            <th></th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          <form action='updateresume.php' method='POST' enctype='multipart/form-data'>
+                <tr class="success">
+                        <td><input type='file' name='myresume'></td>
+	                    <td> <input type ='submit' name='Upload'> </td>
+		                <td>Note:Please choose PDF file</td>
+	           </tr>
+          </form>
+        </tbody>
+    </table>
+</div-->
 
         
        <!----UPLOAD PHOTO BLOCK ENDS--->
@@ -104,13 +126,15 @@ border-top: 1px solid #7C7A7A;
                     <tr class="active">
                         <td>DOB</td>
                         <td><?php echo $dob ?></td>
-                        <td><input type="text" class="form-control" name="dob" id="inputName"                                     placeholder="Update DOB DD/MM/YYYY" value="<?php echo $dob ?>" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="date" class="form-control" name="dob" id="inputName" placeholder="Update DOB DD/MM/YYYY" value="<?php echo $dob ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>   
                      </tr>
                     <tr class="danger">
                         <td>Gender</td>
                         <td><?php echo $gender ?></td>
-                        <td><input type="text" class="form-control" id="inputmobile"                  placeholder="Update Gender" name="gender" value="<?php echo $gender ?>" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female
+                            
                         </td>  
                     </tr>
 

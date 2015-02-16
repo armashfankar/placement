@@ -1,54 +1,22 @@
-<?php
-include "tpomenu.php"; ?>
-<?php
-					$tpoid = $_SESSION['s_id'];
-
-
-				$host="localhost";
-				$user="root";
-				$pass="root";
-				$con = mysql_connect("$host","$user","$pass");
-	
-
-				if (!$con)
-				  {
-
-				echo "Error in DBConnect() = " . mssql_get_last_message();
-				  die('Could not connect: ' . mysql_error());
-
-				  }
-
-				mysql_select_db("placement", $con);
-	
-				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval='yes' and si.placed=''";
-				$result = mysql_query($sql,$con);
-				                
-?>  
-<style type="text/css">
-    .bs-example{
-    	margin: 20px;
-    }
-    
-    hr {
-margin-top: 20px;
-margin-bottom: 20px;
-border: 0;
-border-top: 1px solid #7C7A7A;
-}
-</style>
-
-<body>
-
-<div class="">
-	<div id="respond">
-        <center><h4 style="font-family:Acadian;
+  <center><h4 style="font-family:Acadian;
                             font-size:1.5em;
                             font-variant:small-caps;
                             font-style:oblique;
-                            font-weight:800;">
-                                            Approved Student List
+                            font-weight:800;
+                            color :red    ">
+                                           Results 
                 </h4>
         </center>
+ 
+<?php
+
+$term=$_POST['deg_agg'];
+  $query1 = "select * from student_info where deg_agg>='$term' and placed=''";
+				$resultq1 = mysql_query($query1,$con);
+				
+
+?>
+
 <div class="bs-example">
             <table class="table" border="1">
                 <thead>
@@ -69,7 +37,7 @@ border-top: 1px solid #7C7A7A;
                     <th>SSC</th>
                     <th>Key Skills</th>
                     <th>Project</th>
-                    <th>Approve Student</th>    
+                    <th>Contact Student</th>    
                     
                     
                     
@@ -77,24 +45,24 @@ border-top: 1px solid #7C7A7A;
                 </thead>
                  <tbody>
                      <?php
-while ($row = mysql_fetch_array($result)){
-                $sid= $row['sid'];
-                $fullname= $row['fullname'];
-                $dob = $row['dob'];  
-                $gender = $row['gender'];      
-                $about = $row['about_you'];
-                $institute = $row['institute'];
-                $university = $row['university'];
-                $department = $row['department'];
-                $batch=$row['batch'];
-                $deg7=$row['deg_sem7'];
-                $deg8=$row['deg_sem8'];
-                $degagg=$row['deg_agg'];
-                $diploma=$row['diploma_agg'];
-                $hsc=$row['hsc'];
-                $ssc=$row['ssc'];
-                $key=$row['key_skills'];
-                $project=$row['project_title'];
+while ($rowq1 = mysql_fetch_array($resultq1)){
+                $sid= $rowq1['sid'];
+                $fullname= $rowq1['fullname'];
+                $dob = $rowq1['dob'];  
+                $gender = $rowq1['gender'];      
+                $about = $rowq1['about_you'];
+                $institute = $rowq1['institute'];
+                $university = $rowq1['university'];
+                $department = $rowq1['department'];
+                $batch=$rowq1['batch'];
+                $deg7=$rowq1['deg_sem7'];
+                $deg8=$rowq1['deg_sem8'];
+                $degagg=$rowq1['deg_agg'];
+                $diploma=$rowq1['diploma_agg'];
+                $hsc=$rowq1['hsc'];
+                $ssc=$rowq1['ssc'];
+                $key=$rowq1['key_skills'];
+                $project=$rowq1['project_title'];
                 
                      ?>
                     <tr class="success">
@@ -117,20 +85,10 @@ while ($row = mysql_fetch_array($result)){
                         <td>
                         <form action="viewstud.php" method="post">
                         <input type="hidden" value="<?php echo $sid; ?>" name="sid"> 
-                         <button type="submit" class="btn btn-action">View</button>                             </form>    
+                         <button type="submit" class="btn btn-action">Send Email</button></form>    
                         </td>
-                        
                      </tr>
-                    <?php } ?>
+                    <?php }  ?>
                 </tbody>
             </table>
         </div>
-    </div>
-</div>
-        
-    </div>
-</div><br><br><br><br><Br>
-
-
-</body>
-<?php include "../foot.html"; ?>

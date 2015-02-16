@@ -20,7 +20,7 @@ include "tpomenu.php"; ?>
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval='yes' and si.placed=''";
+				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval='yes' and si.placed='yes'";
 				$result = mysql_query($sql,$con);
 				                
 ?>  
@@ -46,7 +46,7 @@ border-top: 1px solid #7C7A7A;
                             font-variant:small-caps;
                             font-style:oblique;
                             font-weight:800;">
-                                            Approved Student List
+                                            Placed Student List
                 </h4>
         </center>
 <div class="bs-example">

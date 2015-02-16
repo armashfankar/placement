@@ -90,7 +90,7 @@ border-top: 1px solid #7C7A7A;
                      <form action="jobpost.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Company Name</td>
-                        <td><input type="text" class="form-control" name="compname" id="inputName" placeholder="Enter Company Name" value="<?php echo $compname ?>" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="text" class="form-control" name="companyname" id="inputName" placeholder="Enter Company Name" value="<?php echo $compname ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>
                         <td></td>
                      </tr>
@@ -98,11 +98,11 @@ border-top: 1px solid #7C7A7A;
                         <td>Department</td>
                         <td> 
                              <select name="department">
-                                  <option value="co">COMPUTER</option>
-                                  <option value="extc">ELECTRONICS & TELE.</option>
-                                  <option value="ce">CIVIL</option>
-                                  <option value="me">MECHANICAL</option>
-                                <option value="ee">ELECTRICAL</option>
+                                  <option value="computer">COMPUTER</option>
+                                  <option value="elec&tele">ELECTRONICS & TELE.</option>
+                                  <option value="civil">CIVIL</option>
+                                  <option value="mechanical">MECHANICAL</option>
+                                <option value="electrical">ELECTRICAL</option>
                            
                             </select>
       </td> 

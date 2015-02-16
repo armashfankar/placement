@@ -1,7 +1,7 @@
 <?php
 include "tpomenu.php"; ?>
 <?php
-				//	$tpoid = $_SESSION['s_id'];
+					$tpoid = $_SESSION['s_id'];
 
 
 				$host="localhost";
@@ -22,25 +22,7 @@ include "tpomenu.php"; ?>
 	
 				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval=''";
 				$result = mysql_query($sql,$con);
-				$row=mysql_fetch_array($result);
-                $fullname= $row['fullname'];
-                $address = $row['address'];
-                $dob = $row['dob'];  
-                $gender = $row['gender'];      
-                $about = $row['about_you'];
-                $institute = $row['institute'];
-                $university = $row['university'];
-                $department = $row['department'];
-                $batch=$row['batch'];
-                $deg7=$row['deg_sem7'];
-                $deg8=$row['deg_sem8'];
-                $degagg=$row['deg_agg'];
-                $diploma=$row['diploma_agg'];
-                $hsc=$row['hsc'];
-                $ssc=$row['ssc'];
-                $key=$row['key_skills'];
-                $project=$row['project_title'];
-                                
+				                
 ?>  
 <style type="text/css">
     .bs-example{
@@ -57,71 +39,88 @@ border-top: 1px solid #7C7A7A;
 
 <body>
 
-<div class="container">
+<div class="">
 	<div id="respond">
+        <center><h4 style="font-family:Acadian;
+                            font-size:1.5em;
+                            font-variant:small-caps;
+                            font-style:oblique;
+                            font-weight:800;">
+                                            Pending Student List
+                </h4>
+        </center>
 <div class="bs-example">
-            <table class="table">
+            <table class="table" border="1">
                 <thead>
                     <tr>
-                    <th></th>
-                    <th>student Details</th>
-                    <th></th>
+                    <th>Fullname</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>About</th>
+                    <th>Institute</th>
+                    <th>University</th>
+                    <th>Department</th>
+                    <th>Batch</th>
+                    <th>Sem 7</th>
+                    <th>Sem 8</th>
+                    <th>Degree Agg.</th>
+                    <th>Diploma Agg.</th>
+                    <th>HSC</th>
+                    <th>SSC</th>
+                    <th>Key Skills</th>
+                    <th>Project</th>
+                    <th>Approve Student</th>    
+                    
+                    
                     
                     </tr>
                 </thead>
                  <tbody>
-                     <form action="updateprofile.php" method="post" id="commentform">
-                    <tr class="active">
-                        <td>Full Name</td>
-                        <td><?php echo $fullname ?></td>
-                        <td></td><td></td>  <td></td> 
-                     </tr>
-                    <tr class="warning">
-                        <td>Department</td>
-                        <td><?php echo $department ?></td>
-                         <td></td>  <td></td><td></td>
-                     </tr>
+                     <?php
+while ($row = mysql_fetch_array($result)){
+                $sid= $row['sid'];
+                $fullname= $row['fullname'];
+                $dob = $row['dob'];  
+                $gender = $row['gender'];      
+                $about = $row['about_you'];
+                $institute = $row['institute'];
+                $university = $row['university'];
+                $department = $row['department'];
+                $batch=$row['batch'];
+                $deg7=$row['deg_sem7'];
+                $deg8=$row['deg_sem8'];
+                $degagg=$row['deg_agg'];
+                $diploma=$row['diploma_agg'];
+                $hsc=$row['hsc'];
+                $ssc=$row['ssc'];
+                $key=$row['key_skills'];
+                $project=$row['project_title'];
+                
+                     ?>
                     <tr class="success">
-                        <td>Batch</td>
+                        <td><?php echo $fullname ?></td>
+                        <td><?php echo $dob ?></td>
+                        <td><?php echo $gender ?></td>
+                        <td><?php echo $about ?></td>
+                        <td><?php echo $institute ?></td>
+                        <td><?php echo $university ?></td>
+                        <td><?php echo $department ?></td>
                         <td><?php echo $batch ?></td>
-                       <td></td><td></td><td></td>
-                     </tr>
-                    
-                    <tr class="info">
-                        <td>Degree Agg.</td>
+                        <td><?php echo $deg7 ?></td>
+                        <td><?php echo $deg8 ?></td>
                         <td><?php echo $degagg ?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>
-                    
-                    <tr class="danger">
-                        <td>Diploma</td>
                         <td><?php echo $diploma?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>
-                                     
-                    <tr class="info">
-                        <td>SSC</td>
-                        <td><?php echo $ssc ?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>    
-                                                            
-                    <tr class="active">
-                        <td>HSC</td>
                         <td><?php echo $hsc ?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>   
-                         
-                    <tr class="danger">
-                        <td>Key skill</td>
+                        <td><?php echo $ssc ?></td>
                         <td><?php echo $key ?></td>
-                    <td></td>
-                        <td></td><td></td>
-                    </tr>
-                    
+                        <td><?php echo $project ?></td>
+                        <td>
+                        <form action="approvestudent.php" method="post">
+                        <input type="hidden" value="<?php echo $sid; ?>" name="sid"> 
+                        <button type="submit" class="btn btn-action">Approve</button> </form>    
+                        </td>
+                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

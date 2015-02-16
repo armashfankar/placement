@@ -20,7 +20,7 @@ $password=$_POST['password'];
 /* multilogin code*/
  $mysql = "SELECT * FROM stud_login WHERE username='$username' and password=password('$password') and approval='yes'";
 $mysql2 = "SELECT * FROM tpo WHERE username='$username' and password='$password' ";
-$mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password=password('$password') and approval='yes'";
+$mysql3 = "SELECT * FROM comp_login WHERE username='$username' and password=password('$password')";
 
  $result = mysql_query($mysql) or die("cannot execute query");
 $result2 = mysql_query($mysql2) or die("cannot execute query");
