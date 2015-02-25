@@ -33,8 +33,15 @@ $institute=$_POST[institute];
 $university=$_POST[university];
 $department=$_POST[department];
 $batch=$_POST[batch];
+$deg_sem1=$_POST[deg_sem1];
+$deg_sem2=$_POST[deg_sem2];
+$deg_sem3=$_POST[deg_sem3];
+$deg_sem4=$_POST[deg_sem4];
+$deg_sem5=$_POST[deg_sem5];
+$deg_sem6=$_POST[deg_sem6];
 $deg_sem7=$_POST[deg_sem7];
 $deg_sem8=$_POST[deg_sem8];
+
 $deg_agg=$_POST[deg_agg];
 $diploma_agg=$_POST[diploma_agg];
 $hsc=$_POST[hsc];
@@ -43,9 +50,9 @@ $key_skills=$_POST[key_skills];
 $project_title=$_POST[project_title];
 
 $sql1="INSERT INTO student_info(sid,username,fullname,dob,gender,address,about_you,institute,university
-,department,batch,deg_sem7,deg_sem8,deg_agg,diploma_agg,hsc,ssc,key_skills,project_title) 
+,department,batch,deg_sem1,deg_sem2,deg_sem3,deg_sem4,deg_sem5,deg_sem6,deg_sem7,deg_sem8,deg_agg,diploma_agg,hsc,ssc,key_skills,project_title) 
 VALUES
-('$sid','$username','$fullname','$dob','$gender','$address','$about_you','$institute','$university','$department','$batch','$deg_sem7','$deg_sem8','$deg_agg','$diploma_agg','$hsc','$ssc','$key_skills','$project_title')"; 
+('$sid','$username','$fullname','$dob','$gender','$address','$about_you','$institute','$university','$department','$batch','$deg_sem1','$deg_sem2','$deg_sem3','$deg_sem4','$deg_sem5','$deg_sem6','$deg_sem7','$deg_sem8','$deg_agg','$diploma_agg','$hsc','$ssc','$key_skills','$project_title')"; 
 
 
 if (!mysql_query($sql1,$con))

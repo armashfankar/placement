@@ -35,6 +35,13 @@ include "menu.php"; ?>
                 $university = $row['university'];
                 $department = $row['department'];
                 $batch=$row['batch'];
+                $deg1=$row['deg_sem1'];
+                $deg2=$row['deg_sem2'];
+                $deg3=$row['deg_sem3'];
+                $deg4=$row['deg_sem4'];
+                $deg5=$row['deg_sem5'];
+                $deg6=$row['deg_sem6'];
+                
                 $deg7=$row['deg_sem7'];
                 $deg8=$row['deg_sem8'];
                 $degagg=$row['deg_agg'];
@@ -65,98 +72,117 @@ border-top: 1px solid #7C7A7A;
                 <thead>
                     <tr>
                     <th></th>
-                    <th>Student Details</th>
+                    <th>Your Details</th>
                     <th></th>
                     
                     </tr>
                 </thead>
                  <tbody>
-                     <form action="updateprofile.php" method="post" id="commentform">
                     <tr class="active">
                         <td>Full Name</td>
                         <td><?php echo $fullname; ?></td>
-                        <td></td>   
+                        <td></td>  <td></td>   
                      </tr>
                          <tr class="active">
                         <td>DOB</td>
                         <td><?php echo $dob ?></td>
-                         <td></td>  
+                         <td></td>  <td></td>  
                      </tr>
-                    <tr class="success">
+                    <tr class="info">
                         <td>Address</td>
                         <td><?php echo $address ?></td>
-                       <td></td>
+                       <td></td><td></td>  
                      </tr>
                     
                     <tr class="info">
                         <td>About You</td>
                         <td><?php echo $about ?></td>
-                    <td></td>
+                    <td></td><td></td>  
                     </tr>
                     <tr class="warning">
                         <td>University Name</td>
                         <td><?php echo $university ?></td>
-                    <td></td>
+                    <td></td><td></td>  
                     </tr>
                     
                     <tr class="warning">
                         <td>Institute Name</td>
                         <td><?php echo $institute ?></td>
-                    <td></td>
+                    <td></td><td></td>  
                     </tr>
                     <tr class="danger">
                         <td>Department</td>
                         <td><?php echo $department ?></td>
-                        <td></td>                   </tr>
+                        <td></td>       <td></td>              </tr>
                     <tr class="info">
                         <td>Batch</td>
                         <td><?php echo $batch ?></td>
-                       <td></td>
+                       <td></td><td></td>  
                     </tr>
                          <tr class="success">
+                        <td>Degree Sem 1 %</td>
+                        <td><?php echo $deg1 ?></td>
+                             <td>Degree Sem 2 %</td>
+                        <td><?php echo $deg2 ?></td>
+                        
+                         </tr>
+                        <tr class="success">
+                        <td>Degree Sem 3 %</td>
+                        <td><?php echo $deg3 ?></td>
+                             <td>Degree Sem 4 %</td>
+                        <td><?php echo $deg4 ?></td>
+                        
+                         </tr>
+                         <tr class="success">
+                        <td>Degree Sem 5 %</td>
+                        <td><?php echo $deg5 ?></td>
+                             <td>Degree Sem 6 %</td>
+                        <td><?php echo $deg6 ?></td>
+                        
+                         </tr>
+                        <tr class="success">
                         <td>Degree Sem 7 %</td>
                         <td><?php echo $deg7 ?></td>
-                             <td></td>
-                        </tr>
-                        <tr class="info">
-                        <td>Degree Sem 8 %</td>
+                             <td>Degree Sem 8 %</td>
                         <td><?php echo $deg8 ?></td>
-                            <td></td>
-                        </tr>
+                        
+                         </tr>
+                        
                          <tr class="warning">
                         <td>Degree Aggrigate %</td>
                         <td><?php echo $degagg ?></td>
-                        </tr>
-                         <tr class="danger">
                         <td>Diploma Aggrigate %</td>
-                        <td><?php echo $diploma ?></td>
-                             <td></td>
+                        <td><?php echo $diploma ?></td>  
                         </tr>
-                          <tr class="success">
+                        <tr class="danger">
                         <td>HSC %</td>
                         <td><?php echo $hsc ?></td>
-                              <td></td>
+                            <td></td><td></td>
                         </tr>
                           <tr class="danger">
                         <td>SSC %</td>
                         <td><?php echo $ssc ?></td>
-                              <td></td>
+                              <td></td><td></td>
                         </tr>
                           <tr class="warning">
                         <td>Key Skills</td>
                         <td><?php echo $key ?></td>
-                              <td></td>
+                              <td></td><td></td>
                         </tr>
-                         <tr class="success">
+                         <tr class="warning">
                         <td>Project Title</td>
                         <td><?php echo $project ?></td>
-                             <td></td>
+                             <td></td><td></td>
                         </tr>
                     <tr class="info">
                         <td></td>
                         <td></td>
+                        <td>  
+            <form action="updateprofile.php" method="post" id="commentform">                        <button type="submit" class="btn btn-action">Edit Profile</button>
+                </form></td>
                         <td>
-                            <button type="submit" class="btn btn-action">Edit Profile</button>
+                                
+        <button type="submit" class="btn btn-action">Generate CV</button>
                         </td>
                     </tr>
                     

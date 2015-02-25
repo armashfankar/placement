@@ -46,6 +46,13 @@ border-top: 1px solid #7C7A7A;
                 $university = $row3['university'];
                 $department = $row3['department'];
                 $batch=$row3['batch'];
+                $deg1=$row3['deg_sem1'];
+                $deg2=$row3['deg_sem2'];
+                $deg3=$row3['deg_sem3'];
+                $deg4=$row3['deg_sem4'];
+                $deg5=$row3['deg_sem5'];
+                $deg6=$row3['deg_sem6'];
+                
                 $deg7=$row3['deg_sem7'];
                 $deg8=$row3['deg_sem8'];
                 $degagg=$row3['deg_agg'];
@@ -168,7 +175,7 @@ border-top: 1px solid #7C7A7A;
                          <tr class="danger">
                         <td>Department</td>
                         <td><?php echo $department ?></td>
-                        <td><input type="text" class="form-control" id="inputdepartment"                  placeholder="Update Department" name="department" value="<?php echo $department ?>" required data-validation-required-message="Cannot Be Blank">
+                        <td><input type="text" class="form-control" id="inputdepartment" placeholder="Update Department" name="department" value="<?php echo $department ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>
                     </tr>
                     <tr class="info">
@@ -177,14 +184,51 @@ border-top: 1px solid #7C7A7A;
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update batch" name="batch" value="<?php echo $batch ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>
                     </tr>
-                         <tr class="info">
+                         <tr class="warning">
+                        <td>Degree Sem 1 %</td>
+                        <td><?php echo $deg1 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 1 %" name="deg_sem1" value="<?php echo $deg1 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         <tr class="warning">
+                        <td>Degree Sem 2 %</td>
+                        <td><?php echo $deg2 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 2 %" name="deg_sem2" value="<?php echo $deg2 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         <tr class="success">
+                        <td>Degree Sem 3 %</td>
+                        <td><?php echo $deg3 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 3 %" name="deg_sem3" value="<?php echo $deg3 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         <tr class="success">
+                        <td>Degree Sem 4 %</td>
+                        <td><?php echo $deg4 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 4 %" name="deg_sem4" value="<?php echo $deg4 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         <tr class="danger">
+                        <td>Degree Sem 5 %</td>
+                        <td><?php echo $deg5 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 5 %" name="deg_sem5" value="<?php echo $deg5 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         <tr class="danger">
+                        <td>Degree Sem 6 %</td>
+                        <td><?php echo $deg6 ?></td>
+                        <td><input type="number" class="form-control" id="inputbacth"                  placeholder="Update degree sem 6 %" name="deg_sem6" value="<?php echo $deg6 ?>" data-fv-integer-message="The value is not an integer" required>
+                        </td>
+                    </tr>
+                         
+                         <tr class="warning">
                         <td>Degree Sem 7 %</td>
                         <td><?php echo $deg7 ?></td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update degree sem 7 %" name="deg_sem7" value="<?php echo $deg7 ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>
                     </tr>
                     
-                         <tr class="info">
+                         <tr class="warning">
                         <td>Degree Sem 8 %</td>
                         <td><?php echo $deg8 ?></td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update degree sem 8 %" name="deg_sem8" value="<?php echo $deg8 ?>" required data-validation-required-message="Cannot Be Blank">
@@ -205,14 +249,14 @@ border-top: 1px solid #7C7A7A;
                         </td>
                     </tr>
                     
-                         <tr class="info">
+                         <tr class="success">
                         <td>HSC %</td>
                         <td><?php echo $hsc ?></td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update hsc %" name="hsc" value="<?php echo $hsc ?>" required data-validation-required-message="Cannot Be Blank">
                         </td>
                     </tr>
                     
-                         <tr class="info">
+                         <tr class="success">
                         <td>SSC %</td>
                         <td><?php echo $ssc ?></td>
                         <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update ssc %" name="ssc" value="<?php echo $ssc ?>" required data-validation-required-message="Cannot Be Blank">
@@ -221,9 +265,18 @@ border-top: 1px solid #7C7A7A;
                        <tr class="info">
                         <td>Key Skills</td>
                         <td><?php echo $key ?></td>
-                        <td><input type="text" class="form-control" id="inputbacth"                  placeholder="Update key skills" name="key_skills" value="<?php echo $key ?>" required data-validation-required-message="Cannot Be Blank">
-                        </td>
-                    </tr>
+                        <<td><select name="key_skills" required>
+                            <option value ="java" selected>Java</option>
+                            <option value ="python">Python</option>
+                            <option value ="c" >C</option>
+                            <option value ="c++">C++</option>
+                            <option value ="php">Php</option>
+                            <option value ="database">Database</option>
+                            <option value ="networking">Networking</option>
+                            <option value =".net">.Net</option>
+                            </select>
+                        </td>                
+                        </tr>
                        <tr class="info">
                         <td>Project </td>
                         <td><?php echo $project ?></td>

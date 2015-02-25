@@ -27,14 +27,28 @@
                 $row2 = mysql_fetch_array($myresult);
                 $degagg=$row['deg_agg'];
               
-            */
-
-				$sql = " select * from student_info as s,job as j 
+            	$sql = " select * from student_info as s,job as j 
                 where s.deg_agg>=j.deg_agg and s.sid='$studentid' 
-                and j.approval='yes' ORDER BY jid DESC";
-				
+                and j.approval='yes'";
+			
+            $sql= " select * from job where approval='yes' and jid not in
+                (select jid from applied_stud where sid in(select sid from student_info where sid='$studentid' ))"; */
+
+$sql= " select * from job as j,student_info as s  where j.approval='yes'and s.deg_agg>=j.deg_agg and s.sid='$studentid' and j.jid not in (select jid from applied_stud where sid in(select sid from student_info where sid='$studentid'))";
+
         $result = mysql_query($sql,$con);
-	            
+	   $count = mysql_num_rows($result);
+if($count=='NULL')
+{
+    echo "<center><h4  style=font-family:Acadian;
+                            font-size:0.5em;
+                            font-variant:small-caps;
+                            font-style:oblique;
+                            font-weight:100;><font color=red>NO JOBS FOUND FOR YOU.</font></h6></center>";
+    
+}
+else{
+    
 while ($row = mysql_fetch_array($result))
 {               $jid=$row['jid'];
                 $fullname=$row['fullname'];
@@ -128,16 +142,14 @@ while ($row = mysql_fetch_array($result))
                     <form action="applyjob.php" method="post">
                     <input type="hidden" value="<?php echo $jid; ?>" name="jid">
                     <input type="hidden" value="<?php echo $studentid; ?>" name="sid">
-                    <input type="hidden" value="<?php echo $compname; ?>" name="companyname">
-                    <input type="hidden" value="<?php echo $fullname; ?>" name="fullname">
-                 <button type="submit" class="btn btn-action pull-right">Apply</button>
+             <button type="submit" class="btn btn-action pull-right">Apply</button>
                     </form>
 				</article> 
             </div>
         </div>
     </div>
 </main>
-<?php } ?>
+<?php } } ?>
 </br><br>
 <br><br>
 <br><br>

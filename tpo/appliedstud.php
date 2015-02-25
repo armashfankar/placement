@@ -20,7 +20,7 @@ include "tpomenu.php"; ?>
 
 				mysql_select_db("placement", $con);
 	
-				$sql = "SELECT * from applied_stud";
+				$sql = "SELECT * from applied_stud as a,job as j,student_info as s where a.jid=j.jid and a.sid=s.sid ";
 				$result = mysql_query($sql,$con);
 				                
 ?>  
@@ -74,6 +74,7 @@ while ($row = mysql_fetch_array($result)){
                     <tr class="success">
                         <td><?php echo $compname ?></td>
                         <td><?php echo $fullname ?></td>
+                <!--The below comment is for button for giving some action to tpo-->        
                         <!--td>
                         <form action="#" method="post">
            <input type="hidden" value="<?php echo $jid; ?>" name="jid">

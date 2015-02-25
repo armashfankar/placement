@@ -35,6 +35,13 @@ session_start();
                 $university=$_POST['university'];
                 $department=$_POST['department'];
                 $batch=$_POST['batch'];
+                $deg_sem1=$_POST['deg_sem1'];
+                $deg_sem2=$_POST['deg_sem2'];
+                $deg_sem3=$_POST['deg_sem3'];
+                $deg_sem4=$_POST['deg_sem4'];
+                $deg_sem5=$_POST['deg_sem5'];
+                $deg_sem6=$_POST['deg_sem6'];
+               
                 $deg_sem7=$_POST['deg_sem7'];
                 $deg_sem8=$_POST['deg_sem8'];
                 $deg_agg=$_POST['deg_agg'];
@@ -44,7 +51,7 @@ session_start();
                 $key_skills=$_POST['key_skills'];
                 $project_title=$_POST['project_title'];
 
-$sql1="UPDATE student_info SET fullname='$fullname',dob='$dob',gender='$gender',address='$address',about_you='$about_you',institute='$institute',university='$university',department='$department',batch='$batch',deg_sem7='$deg_sem7',
+$sql1="UPDATE student_info SET fullname='$fullname',dob='$dob',gender='$gender',address='$address',about_you='$about_you',institute='$institute',university='$university',department='$department',batch='$batch',deg_sem1='$deg_sem1',deg_sem2='$deg_sem2',deg_sem3='$deg_sem3',deg_sem4='$deg_sem4',deg_sem5='$deg_sem5',deg_sem6='$deg_sem6',deg_sem7='$deg_sem7',
 deg_sem8='$deg_sem8',deg_agg='$deg_agg',diploma_agg='$diploma_agg',hsc='$hsc',ssc='$ssc',
 key_skills='$key_skills',project_title='$project_title'
 WHERE sid='$sid'"; 
