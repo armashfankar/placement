@@ -53,7 +53,8 @@ border-top: 1px solid #7C7A7A;
 <div class="bs-example">
             <table class="table" >
                  <tbody>
-                    <tr class="success">
+                         
+                     <tr class="success">
                         <td>Name</td>
                         <form action="searchstud.php" method="post">
                         <td><input type="text" value="" name="fullname" maxlength="10">                         </td>
@@ -61,7 +62,7 @@ border-top: 1px solid #7C7A7A;
                             <input type="hidden" value="query1" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                     <tr class="success">
                         <td>SSC %</td>
@@ -71,7 +72,7 @@ border-top: 1px solid #7C7A7A;
                                 <input type="hidden" value="query2" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                     <tr class="success">
                         <td>HSC %</td>
@@ -81,7 +82,7 @@ border-top: 1px solid #7C7A7A;
                                 <input type="hidden" value="query3" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                       <tr class="success">
                         <td>Diploma Agg. %</td>
@@ -91,7 +92,7 @@ border-top: 1px solid #7C7A7A;
                               <input type="hidden" value="query4" name="search">
                           <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                   
                     <tr class="success">
@@ -102,7 +103,7 @@ border-top: 1px solid #7C7A7A;
                             <input type="hidden" value="query5" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                     <tr class="success">
                         <td>Key Skills</td>
@@ -112,7 +113,7 @@ border-top: 1px solid #7C7A7A;
                                <input type="hidden" value="query6" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
                        <tr class="success">
                         <td>Department</td>
@@ -122,9 +123,41 @@ border-top: 1px solid #7C7A7A;
                           <input type="hidden" value="query7" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                  </form>    
-                        </td>
+                        </td><td></td><td></td><td></td><td></td>
                      </tr>
-                  
+                  <tr class="success">
+                        <form action="" method="post">
+                        <td><select name="option1" required >
+                            <option value ="">Select option 1</option>
+                            
+                            <option value ="fullname">Name</option>
+                            <option value ="ssc">SSC %</option>
+                            <option value ="hsc" >HSC %</option>
+                            <option value ="department">Department</option>
+                            <option value ="electrical">Electrical Engineering</option>
+                            </select>                         
+                            </td>
+                            <td><input type="text" name="term1" maxlength="10">
+                            </td>
+                            
+                        <td><select name="option2" required >
+                            <option value ="">Select option 1</option>
+                            
+                            <option value ="fullname">Name</option>
+                            <option value ="ssc">SSC %</option>
+                            <option value ="hsc" >HSC %</option>
+                            <option value ="department">Department</option>
+                            <option value ="electrical">Electrical Engineering</option>
+                            </select>                         
+                            </td>
+                            <td><input type="text" name="term2" maxlength="10">
+                            </td><td>
+                            <input type="hidden" value="mquery" name="search">
+                           <button type="submit" class="btn btn-action">Search</button>
+                        </form>    
+                        </td><td></td><td></td>
+                     </tr>
+                    
                   
                 </tbody>
             </table>
@@ -161,6 +194,10 @@ elseif($search=='query6')
 elseif($search=='query7')
 {
  include "search/query7.php";
+}
+elseif($search=='mquery')
+{
+ include "search/query8.php";
 }
 
 

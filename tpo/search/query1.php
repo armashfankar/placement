@@ -10,8 +10,8 @@
 
 <?php
 
-$fullname=$_POST['fullname'];
-  $query1 = "select * from student_info where fullname like '%$fullname%' and placed=''";
+$fullname1=$_POST['fullname'];
+  $query1 = "select * from student_info where fullname like '%$fullname1%' and placed=''";
 				$resultq1 = mysql_query($query1,$con);
 				
 
@@ -37,7 +37,7 @@ $fullname=$_POST['fullname'];
                     <th>SSC</th>
                     <th>Key Skills</th>
                     <th>Project</th>
-                    <th>Contact Student</th>    
+                    <th>Excel File</th>    
                     
                     
                     
@@ -83,9 +83,9 @@ while ($rowq1 = mysql_fetch_array($resultq1)){
                         <td><?php echo $key ?></td>
                         <td><?php echo $project ?></td>
                         <td>
-                        <form action="viewstud.php" method="post">
-                        <input type="hidden" value="<?php echo $sid; ?>" name="sid"> 
-                         <button type="submit" class="btn btn-action">Send Email</button></form>    
+                        <form action="search/excel1.php" method="post">
+                        <input type="hidden" value="<?php echo $fullname1; ?>" name="fullname"> 
+                         <button type="submit" class="btn btn-action">Generate</button></form>    
                         </td>
                      </tr>
                     <?php }  ?>

@@ -37,7 +37,7 @@ $term=$_POST['hsc'];
                     <th>SSC</th>
                     <th>Key Skills</th>
                     <th>Project</th>
-                    <th>Contact Student</th>    
+                    <th>Excel File</th>    
                     
                     
                     
@@ -83,9 +83,9 @@ while ($rowq1 = mysql_fetch_array($resultq1)){
                         <td><?php echo $key ?></td>
                         <td><?php echo $project ?></td>
                         <td>
-                        <form action="viewstud.php" method="post">
-                        <input type="hidden" value="<?php echo $sid; ?>" name="sid"> 
-                         <button type="submit" class="btn btn-action">Send Email</button></form>    
+                        <form action="search/excel3.php" method="post">
+                        <input type="hidden" value="<?php echo $term; ?>" name="hsc"> 
+                         <button type="submit" class="btn btn-action">Generate</button></form>      
                         </td>
                      </tr>
                     <?php }  ?>

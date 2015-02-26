@@ -10,7 +10,7 @@
 
 <?php
 
-$term=$_POST['department_agg'];
+$term=$_POST['department'];
   $query1 = "select * from student_info where department like '%$term%' and placed=''";
 				$resultq1 = mysql_query($query1,$con);
 				
@@ -37,7 +37,7 @@ $term=$_POST['department_agg'];
                     <th>SSC</th>
                     <th>Key Skills</th>
                     <th>Project</th>
-                    <th>Contact Student</th>    
+                    <th>Excel File</th>    
                     
                     
                     
@@ -83,9 +83,9 @@ while ($rowq1 = mysql_fetch_array($resultq1)){
                         <td><?php echo $key ?></td>
                         <td><?php echo $project ?></td>
                         <td>
-                        <form action="viewstud.php" method="post">
-                        <input type="hidden" value="<?php echo $sid; ?>" name="sid"> 
-                         <button type="submit" class="btn btn-action">Send Email</button></form>    
+                         <form action="search/excel6.php" method="post">
+                        <input type="hidden" value="<?php echo $term; ?>" name="department"> 
+                         <button type="submit" class="btn btn-action">Generate</button></form>        
                         </td>
                      </tr>
                     <?php }  ?>
