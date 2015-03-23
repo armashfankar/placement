@@ -67,7 +67,7 @@ html,body {
 					<div class="text-center">
 						<h3 class="page-header">Placement Login</h3>
 					</div>
-						<form name='login' method="post" action="test.php">
+						<form name='login' method="post" action="login.php">
 						    
 						<input type="text" class="form-control" placeholder="Username" name="username" 
                               required data-validation-required-message="Please enter your name."/>

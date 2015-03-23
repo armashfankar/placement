@@ -19,7 +19,7 @@
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="../assets/css/styles.css">
 	
-
+</head>
 <body class="home">
 
 <header id="header">

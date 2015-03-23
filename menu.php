@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-
 <?php session_start(); ?>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-        <link rel="shortcut icon" href="img/p.png">
+        <link rel="shortcut icon" href="../img/p.png">
 		<title>Placement</title>
 		<meta name="placement" content="description">
 		<meta name="placement" content="placement">
@@ -12,15 +11,15 @@
 <!-- Bootstrap -->
 	<link href="assets/css/bootstrap.no-icons.min.css" rel="stylesheet">
 	<!-- Icons -->
-	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <!--	<link href="assets/css/font-awesome.css" rel="stylesheet">-->
 	
     <!-- Fonts -->
-	<link rel="stylesheet" href="assets/css/font.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
 	
-
+</head>
 <body class="home">
 
 <header id="header">
