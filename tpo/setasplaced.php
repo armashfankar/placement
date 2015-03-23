@@ -3,6 +3,10 @@ session_start();
 $tpoid = $_SESSION['s_id'];
 
 $sid=$_POST['sid'];
+$comp=$_POST['company'];
+$job=$_POST['job_role'];
+$salary=$_POST['salary'];
+
 	            $host="localhost";
 				$user="root";
 				$pass="root";
@@ -20,7 +24,7 @@ $sid=$_POST['sid'];
 				mysql_select_db("placement", $con);
 	
 
-$sql1="UPDATE student_info SET placed='yes' WHERE sid='$sid'"; 
+$sql1="UPDATE student_info SET placed='yes',salary='$salary',job_role='$job',company='$comp' WHERE sid='$sid'"; 
 
 
 if (!mysql_query($sql1,$con))

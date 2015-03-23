@@ -88,4 +88,5 @@ border-top: 1px solid #7C7A7A;
         
 
 </body>
+<br>
 <?php include "../foot.html"; ?>

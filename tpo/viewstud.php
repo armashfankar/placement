@@ -66,12 +66,13 @@ border-top: 1px solid #7C7A7A;
 <div class="container">
 	<div id="respond">
 <div class="bs-example">
-      <button type="submit" id="forgotpassword" data-toggle="modal" data-target="#largeModal1" class="btn btn-action pull-right">Send Email</button>
-    <form action="setasplaced.php" method="post">
-  <input type="hidden" value="<?php echo $sid; ?>" name="sid">
-<button type="submit" id=""  class="btn btn-action pull-right">Mark As Placed</button>
+      <button type="submit" id="forgotpassword" data-toggle="modal" data-target="#largeModal2" class="btn btn-action pull-right">Send Email</button>
+    
+    <!--form action="setasplaced.php" method="post">        
+  <input type="hidden" value="<?php echo $sid; ?>" name="sid"-->
+<button type="submit" id="" data-toggle="modal" data-target="#largeModal3" class="btn btn-action pull-right"  class="btn btn-action pull-right">Mark As Placed</button>
         </form>
-  
+  <br><Br><br>
             <table class="table">
                 <thead>
                     <tr>
@@ -175,7 +176,7 @@ border-top: 1px solid #7C7A7A;
         
 
 
-<div class="modal fade" id="largeModal1" tabindex="-1" role="dialog" aria-          labelledby="largeModal" aria-hidden="true">
+<div class="modal fade" id="largeModal2" tabindex="-1" role="dialog" aria-          labelledby="largeModal" aria-hidden="true">
     <form id="companyemail" action="emailtostud.php" method="post" class="form-horizontal" role="form">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -205,6 +206,48 @@ border-top: 1px solid #7C7A7A;
                     </div>
                 </div>
             </div>
+
+
+
+
+<div class="modal fade" id="largeModal3" tabindex="-1" role="dialog" aria-          labelledby="largeModal" aria-hidden="true">
+   <form action="setasplaced.php" method="post">        
+  <input type="hidden" value="<?php echo $sid; ?>" name="sid">
+    <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ <h4 class="modal-title" id="myModalLabel">Placement Details of &nbsp;<?php echo $fullname; ?></h4>
+                                </div>
+                                <div class="modal-body">
+                                <table>  
+                                <tr>
+                                <td><label>Company Name:</label></td>
+                                <td><input type="text" name="company"></td>
+                                </tr>
+                                <tr>
+                                <td><label>Job Role:</label></td>
+                                <td><input type="text" name="job_role"></td>
+                                </tr>
+                                <tr>
+                                <td><label>Salary:</label></td>
+                                <td><input type="number" name="salary"></td>
+                                </tr>
+                                </table> 
+                                </div>
+                                <div class="modal-footer">
+         <button id="btn-login" type="submit" class="btn btn-default">Submit  </button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
 
     </div>
 </div><br><br><br><br><Br>

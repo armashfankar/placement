@@ -34,7 +34,7 @@
             $sql= " select * from job where approval='yes' and jid not in
                 (select jid from applied_stud where sid in(select sid from student_info where sid='$studentid' ))"; */
 
-$sql= " select * from job as j,student_info as s  where j.approval='yes'and s.deg_agg>=j.deg_agg and s.sid='$studentid' and j.jid not in (select jid from applied_stud where sid in(select sid from student_info where sid='$studentid'))";
+$sql= " select j.*,s.sid from job as j,student_info as s  where j.approval='yes'and s.deg_agg>=j.deg_agg and s.sid='$studentid' and s.placed='' and j.jid not in (select jid from applied_stud where sid in(select sid from student_info where sid='$studentid'))";
 
         $result = mysql_query($sql,$con);
 	   $count = mysql_num_rows($result);
@@ -44,7 +44,7 @@ if($count=='NULL')
                             font-size:0.5em;
                             font-variant:small-caps;
                             font-style:oblique;
-                            font-weight:100;><font color=red>NO JOBS FOUND FOR YOU.</font></h6></center>";
+                            font-weight:100;><font color=red>You Have Already Applied For Jobs OR You Are Placed.</font></h6></center>";
     
 }
 else{
@@ -56,14 +56,13 @@ while ($row = mysql_fetch_array($result))
                 $dept = $row['department'];
                 $domain = $row['domain'];
                 $location = $row['job_location'];
-                $role = $row['job_role'];
+                $job = $row['job_role'];
                 $ssc = $row['ssc'];
                 $hsc = $row['hsc'];
                 $deg = $row['deg_agg'];
                 $dip = $row['diploma_agg'];
                 $approval = $row['approval'];
-
-
+ 
 ?>
 
 <main id="main">
@@ -111,7 +110,7 @@ while ($row = mysql_fetch_array($result))
                     
                     <tr class="info">
                         <td>Job Role</td>
-                        <td><?php echo $role ?></td>
+                        <td><?php echo $job; ?></td>
                     <td></td>
                     </tr>
                            <tr class="danger">
@@ -142,6 +141,7 @@ while ($row = mysql_fetch_array($result))
                     <form action="applyjob.php" method="post">
                     <input type="hidden" value="<?php echo $jid; ?>" name="jid">
                     <input type="hidden" value="<?php echo $studentid; ?>" name="sid">
+                    <input type="hidden" value="<?php echo $job; ?>" name="job_role">
              <button type="submit" class="btn btn-action pull-right">Apply</button>
                     </form>
 				</article> 
@@ -152,5 +152,5 @@ while ($row = mysql_fetch_array($result))
 <?php } } ?>
 </br><br>
 <br><br>
-<br><br>
+<br><br> 
 <?php include "foot.html" ?>

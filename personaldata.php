@@ -45,7 +45,7 @@ include "menu1.php"; ?>
                     </tr>
                 </thead>
                  <tbody>
-                    <tr class="active">
+                    <tr class="danger">
                         <td>Full Name</td>
                         <td><input type="text" class="form-control" name="fullname" id="inputName" placeholder="Full Name" required>
                         </td>  <td></td> <td></td>
@@ -57,7 +57,7 @@ include "menu1.php"; ?>
                         </td>  <td></td> <td></td>
 
                      </tr>
-                    <tr class="danger">
+                    <tr class="active">
                         <td>Gender</td>
                         <td><input type="radio" name="gender" value="male">Male<br>
 <input type="radio" name="gender" value="female" required>Female
@@ -82,7 +82,7 @@ include "menu1.php"; ?>
                        <td><input type="text" class="form-control" id="inputinstitute"                  placeholder="Institute name" name="institute" required>
                         </td><td></td><td></td>
                     </tr>
-                     <tr class="success">
+                     <tr class="danger">
                         <td>University Name</td>
                        <td><input type="text" class="form-control" id="inputinstitute"                  placeholder="University name" name="university" required>
                         </td><td></td><td></td>
@@ -168,6 +168,8 @@ include "menu1.php"; ?>
                             <option value =".net">.Net</option>
                             </select>
                         </td>
+                        <td>No.of Live KT</td>
+                        <td><input type="number" class="form-control" maxlength="2" id="txtNumeric"  data-fv-integer-message="The value is not an integer"                placeholder="Please Insert Zero if No KT" name="kt" required></td>
                   <td></td><td></td>
                     </tr>     
                 <tr class="info">

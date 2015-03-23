@@ -22,8 +22,13 @@ include "tpomenu.php"; ?>
 	
 				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval=''";
 				$result = mysql_query($sql,$con);
+
+                $count = mysql_num_rows($result);
+            if($count==true){
+   
 				                
 ?>  
+
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -76,6 +81,7 @@ border-top: 1px solid #7C7A7A;
                     </tr>
                 </thead>
                  <tbody>
+
                      <?php
 while ($row = mysql_fetch_array($result)){
                 $sid= $row['sid'];
@@ -97,6 +103,7 @@ while ($row = mysql_fetch_array($result)){
                 $project=$row['project_title'];
                 
                      ?>
+
                     <tr class="success">
                         <td><?php echo $fullname ?></td>
                         <td><?php echo $dob ?></td>
@@ -120,7 +127,17 @@ while ($row = mysql_fetch_array($result)){
                         <button type="submit" class="btn btn-action">Approve</button> </form>    
                         </td>
                      </tr>
-                    <?php } ?>
+                    <?php } }else{ echo 
+"<center><h4 style=font-family:Acadian;
+                            font-size:1.5em;
+                            font-variant:small-caps;
+                            font-style:oblique;
+                            font-weight:800;
+                            color :red>
+                          Sorry :( <br>  No Record(s) Found 
+                </h4>
+        </center>
+"; } ?>
                 </tbody>
             </table>
         </div>

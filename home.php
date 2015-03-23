@@ -78,7 +78,7 @@ border-top: 1px solid #7C7A7A;
                     </tr>
                 </thead>
                  <tbody>
-                    <tr class="active">
+                    <tr class="danger">
                         <td>Full Name</td>
                         <td><?php echo $fullname; ?></td>
                         <td></td>  <td></td>   
@@ -94,7 +94,7 @@ border-top: 1px solid #7C7A7A;
                        <td></td><td></td>  
                      </tr>
                     
-                    <tr class="info">
+                    <tr class="success">
                         <td>About You</td>
                         <td><?php echo $about ?></td>
                     <td></td><td></td>  
@@ -105,7 +105,7 @@ border-top: 1px solid #7C7A7A;
                     <td></td><td></td>  
                     </tr>
                     
-                    <tr class="warning">
+                    <tr class="active">
                         <td>Institute Name</td>
                         <td><?php echo $institute ?></td>
                     <td></td><td></td>  
@@ -159,7 +159,7 @@ border-top: 1px solid #7C7A7A;
                         <td><?php echo $hsc ?></td>
                             <td></td><td></td>
                         </tr>
-                          <tr class="danger">
+                          <tr class="active">
                         <td>SSC %</td>
                         <td><?php echo $ssc ?></td>
                               <td></td><td></td>
@@ -169,21 +169,22 @@ border-top: 1px solid #7C7A7A;
                         <td><?php echo $key ?></td>
                               <td></td><td></td>
                         </tr>
-                         <tr class="warning">
+                         <tr class="info">
                         <td>Project Title</td>
                         <td><?php echo $project ?></td>
                              <td></td><td></td>
                         </tr>
-                    <tr class="info">
+                    <tr class="danger">
                         <td></td>
                         <td></td>
                         <td>  
-            <form action="updateprofile.php" method="post" id="commentform">                        <button type="submit" class="btn btn-action">Edit Profile</button>
+            <form action="updateprofile.php" method="post" id="commentform">                        <button type="submit" class="btn btn-action pull-right">Edit Profile</button>
                 </form></td>
                         <td>
-                                
-        <button type="submit" class="btn btn-action">Generate CV</button>
-                        </td>
+            <form action="mycv.php" method="post" id="commentform">      
+                    <button type="submit" class="btn btn-action pull-right">My CV</button>
+            </form>        
+                </td>
                     </tr>
                     
                 </tbody>

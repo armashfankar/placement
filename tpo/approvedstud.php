@@ -22,6 +22,10 @@ include "tpomenu.php"; ?>
 	
 				$sql = "SELECT * from student_info si,stud_login sl where si.sid=sl.sid and sl.approval='yes' and si.placed=''";
 				$result = mysql_query($sql,$con);
+                
+                $count = mysql_num_rows($result);
+            if($count==true){
+
 				                
 ?>  
 <style type="text/css">
@@ -121,7 +125,19 @@ while ($row = mysql_fetch_array($result)){
                         </td>
                         
                      </tr>
-                    <?php } ?>
+                    <?php } }else { echo 
+"<center><h4 style=font-family:Acadian;
+                            font-size:1.5em;
+                            font-variant:small-caps;
+                            font-style:oblique;
+                            font-weight:800;
+                            color :red>
+                          Sorry :( <br>  No Record Found 
+                </h4>
+        </center>
+";
+                     
+            }?>
                 </tbody>
             </table>
         </div>
@@ -129,7 +145,7 @@ while ($row = mysql_fetch_array($result)){
 </div>
         
     </div>
-</div><br><br><br><br><Br>
+</div><br><br><br><br><br><br><br><br><br><br><Br>
 
 
 </body>

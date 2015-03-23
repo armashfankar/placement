@@ -1,5 +1,6 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
+
+<?php session_start(); ?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -11,11 +12,11 @@
 <!-- Bootstrap -->
 	<link href="assets/css/bootstrap.no-icons.min.css" rel="stylesheet">
 	<!-- Icons -->
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
 <!--	<link href="assets/css/font-awesome.css" rel="stylesheet">-->
 	
     <!-- Fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<link rel="stylesheet" href="assets/css/font.css">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
 	
@@ -75,16 +76,16 @@
 					<li><a href="news.php">News & Events <i class="fa fa-info-circle "></i></a></li>
 					
 					<li><a href="updateprofile.php">Update Profile <i class="fa fa-gear "></i></a></li>
-                    <!--li class="dropdown">
+                    <li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Notification  <i class="fa fa-bell-o "></i></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Notification 1</a></li>
-							<li><a href="#">Notification 2</a></li>
-							<li><a href="#">Notification 3</a></li>
+							<li><a href="latestjobs.php">Job Notification</a></li>
+							<li><a href="#" id="forgotpassword" data-toggle="modal" data-target="#largeModal1">Other</a></li>
+							
 						</ul>
-					</li-->
+					</li>
                     
-        <li><a href="latestjobs.php">Job Notification <i class="fa fa-star-half-o "></i></a></li>
+        <!--li><a href="latestjobs.php">Job Notification <i class="fa fa-star-half-o "></i></a></li-->
 		
 		<li><a href="logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
 				</ul>
@@ -93,6 +94,44 @@
 		</div>	
 	</nav>
 
+<?php
+$sug = "SELECT domain from job where approval='yes' and domain not in (select key_skills from student_info where sid='{$studentid}')";
+				$myresult = mysql_query($sug,$con);
+				
+    ?>
+     <div class="modal fade" id="largeModal1" tabindex="-1" role="dialog" aria-          labelledby="largeModal" aria-hidden="true">
+    <form id="companyemail" action="emailtoall.php" method="post" class="form-horizontal" role="form">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ <h4 class="modal-title" id="myModalLabel">Suggestions</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fluid">
+            <div class="panel-body" >
+        <p> Hello <?php echo $username;?><br>
+            Companies are posting jobs for
+            (<?php 
+            while($myrow=mysql_fetch_array($myresult)){
+                $key=$myrow['domain'];
+            echo $key; ?>  <?php } ?>)
+        </p>
+                                            </div>
+        		                        
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
 
     
+
     

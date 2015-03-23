@@ -90,5 +90,5 @@ while ($row = mysql_fetch_array($result))
     </div><hr>
 </main>
 <?php } ?>
-
+<br><br><br>
 <?php include "../foot.html"; ?>

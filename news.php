@@ -69,5 +69,5 @@ $title = $row['title'];
     </div>
 </main><br><br>
 <?php } ?>
-</br><br>
+</br><br><br><br><br><br><br>
 <?php include "foot.html" ?>

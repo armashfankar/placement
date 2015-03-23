@@ -1,5 +1,6 @@
 <?php
 include "head.html";
+
 ?>
 
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -66,7 +67,7 @@ html,body {
 					<div class="text-center">
 						<h3 class="page-header">Placement Login</h3>
 					</div>
-						<form name='login' method="post" action="login.php">
+						<form name='login' method="post" action="test.php">
 						    
 						<input type="text" class="form-control" placeholder="Username" name="username" 
                               required data-validation-required-message="Please enter your name."/>
@@ -83,6 +84,13 @@ html,body {
 			</div>
 			
 				   </form>
+		<?php		   
+if(isset($_GET['error']))
+  		{
+ 		echo "Incorrect Password";
+  		 }
+  		?>				   
+				   
 				</div>
 			
 			</div>

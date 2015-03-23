@@ -22,7 +22,10 @@ include "tpomenu.php"; ?>
 	
 				$sql = "SELECT * from job where approval=''";
 				$result = mysql_query($sql,$con);
-				                
+                    $count = mysql_num_rows($result);
+            if($count==true){
+   
+
 ?>  
 <style type="text/css">
     .bs-example{
@@ -105,7 +108,17 @@ while ($row = mysql_fetch_array($result)){
                         <button type="submit" class="btn btn-action">Approve</button> </form>    
                         </td>
                      </tr>
-                    <?php } ?>
+                    <?php } }else { echo 
+"<center><h4 style=font-family:Acadian;
+                            font-size:1.5em;
+                            font-variant:small-caps;
+                            font-style:oblique;
+                            font-weight:800;
+                            color :red>
+                          Sorry :( <br>  No Record(s) Found 
+                </h4>
+        </center>
+"; } ?>
                 </tbody>
             </table>
         </div>

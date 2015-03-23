@@ -51,7 +51,7 @@ border-top: 1px solid #7C7A7A;
         </center>
         <div class="container">
 <div class="bs-example">
-            <table class="table" >
+            <!--table class="table" >
                  <tbody>
                          
                      <tr class="success">
@@ -62,7 +62,9 @@ border-top: 1px solid #7C7A7A;
                             <input type="hidden" value="query1" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td></td>
+                        <td>
+                        <td></td><td></td>
                      </tr>
                     <tr class="success">
                         <td>SSC %</td>
@@ -72,7 +74,9 @@ border-top: 1px solid #7C7A7A;
                                 <input type="hidden" value="query2" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td></td>
+                        <td>
+                        <td></td><td></td>
                      </tr>
                     <tr class="success">
                         <td>HSC %</td>
@@ -82,7 +86,9 @@ border-top: 1px solid #7C7A7A;
                                 <input type="hidden" value="query3" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td><td></td>
+                        <td>
+                        </td><td></td>
                      </tr>
                       <tr class="success">
                         <td>Diploma Agg. %</td>
@@ -92,7 +98,9 @@ border-top: 1px solid #7C7A7A;
                               <input type="hidden" value="query4" name="search">
                           <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td><td></td>
+                        <td>
+                        </td><td></td>
                      </tr>
                   
                     <tr class="success">
@@ -103,7 +111,9 @@ border-top: 1px solid #7C7A7A;
                             <input type="hidden" value="query5" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td><td></td>
+                        <td>
+                        </td><td></td>
                      </tr>
                     <tr class="success">
                         <td>Key Skills</td>
@@ -113,7 +123,9 @@ border-top: 1px solid #7C7A7A;
                                <input type="hidden" value="query6" name="search">
                          <button type="submit" class="btn btn-action">Search</button>
                         </form>    
-                        </td><td></td><td></td><td></td><td></td>
+                        </td><td></td><td></td></td>
+                        <td>
+                        <td></td><td></td>
                      </tr>
                        <tr class="success">
                         <td>Department</td>
@@ -123,31 +135,43 @@ border-top: 1px solid #7C7A7A;
                           <input type="hidden" value="query7" name="search">
                         <button type="submit" class="btn btn-action">Search</button>
                  </form>    
-                        </td><td></td><td></td><td></td><td></td>
-                     </tr>
+                        </td><td></td><td></td></td>
+                        <td>
+                        <td></td><td></td>
+                     </tr-->
+    <input list="browsers" name="browser">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+
                   <tr class="success">
                         <form action="" method="post">
                         <td><select name="option1" required >
                             <option value ="">Select option 1</option>
                             
                             <option value ="fullname">Name</option>
-                            <option value ="ssc">SSC %</option>
-                            <option value ="hsc" >HSC %</option>
+                       <!--	 <option value ="ssc">SSC %</option>
+                            <option value ="hsc" >HSC %</option>	-->
                             <option value ="department">Department</option>
-                            <option value ="electrical">Electrical Engineering</option>
                             </select>                         
                             </td>
                             <td><input type="text" name="term1" maxlength="10">
                             </td>
+                       <!--     <option value ="electrical">Electrical Engineering</option>	
+                            
                             
                         <td><select name="option2" required >
                             <option value ="">Select option 1</option>
                             
                             <option value ="fullname">Name</option>
                             <option value ="ssc">SSC %</option>
-                            <option value ="hsc" >HSC %</option>
+                            <option value ="hsc" >HSC %</option>    
                             <option value ="department">Department</option>
-                            <option value ="electrical">Electrical Engineering</option>
+                            <option value ="electrical">Electrical Engineering</option>    
                             </select>                         
                             </td>
                             <td><input type="text" name="term2" maxlength="10">
@@ -157,7 +181,27 @@ border-top: 1px solid #7C7A7A;
                         </form>    
                         </td><td></td><td></td>
                      </tr>
-                    
+                    -->
+                            
+                            
+                   
+                        <td>Diploma Agg. %</td>
+                     
+                 <td><input type="text" value="" maxlength="2" name="diploma_agg"></td>
+                        <td>
+                             
+                       
+                            
+                            <td>Degree Agg. %</td>
+                       
+                 <td><input type="text" value="" maxlength="2" name="degree_agg" required></td>
+                        <td>
+                              <input type="hidden" value="mquery" name="search">
+                          <button type="submit" class="btn btn-action">Search</button>
+                        </form> 
+                            
+                            
+                     </tr>
                   
                 </tbody>
             </table>
@@ -203,5 +247,5 @@ elseif($search=='mquery')
 
 
 ?>
-</body>
+</body><br><br>
 <?php include "../foot.html"; ?>
